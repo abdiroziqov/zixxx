@@ -10,7 +10,7 @@ export default createConfigForNuxt({
     "./components/**/*.{vue,ts,tsx}",
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
-    "./stores/**/*.ts",
+    "./store/**/*.ts",
     "./server/**/*.ts",
     "./nuxt.config.ts",
     "./eslint.config.{mjs,js,cjs}",
