@@ -8,9 +8,6 @@
     }"
     class="z-10 transition-all duration-300"
   >
-
-
-    {{ $t('hello') }}
     <div class="container">
       <div class="flex justify-between items-center py-4">
         <NuxtLink to="/">

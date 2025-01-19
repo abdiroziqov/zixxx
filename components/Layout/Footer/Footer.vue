@@ -6,6 +6,15 @@
       class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 pb-6 md:pb-10"
     >
       <div>
+        <NuxtLink to="/">
+          <img src="/images/logo.svg" alt="logo" />
+        </NuxtLink>
+        <p class="text-[#adadad] font-normal leading-5 w-[235px]">
+        {{ $t('footer_description') }}
+        </p>
+        <CommonSocials class="mt-8" :socials="socialsData" />
+      </div>
+      <div>
         <h3 class="font-bold text-[20px] text-white inline-block pb-2">
           Quick Links
         </h3>
@@ -23,16 +32,7 @@
           </li>
         </ul>
       </div>
-      <div>
-        <NuxtLink to="/">
-          <img src="/images/logo.svg" alt="logo" />
-        </NuxtLink>
-        <p class="text-[#adadad] mt-5 leading-8">
-          Auction Lab is one of the most amazing companies ever for painting all
-          over the world.
-        </p>
-        <CommonSocials class="mt-8" :socials="socialsData" />
-      </div>
+
     </div>
     <div
       class="container space-x-2 flex justify-center border-[rgba(196,196,196,0.2)] border-t py-4 text-sm"
@@ -42,7 +42,7 @@
         rights reserved.
       </p>
       <span class="hidden md:block">|</span>
-      <p>Developed by <span>Muslima</span></p>
+      <p>{{ $t('developed_and_designed_by') }} <span>Iceek</span></p>
     </div>
   </footer>
 </template>

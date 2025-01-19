@@ -10,7 +10,7 @@
       <Transition name="scale-fade" mode="out-in">
         <img
           :key="theme"
-          :src="theme === 'light' ? 'theme/sun' : 'theme/moon'"
+          :src="theme === 'light' ? '/images/theme/sun.svg' : '/images/theme/moon.svg'"
           class="text-xs"
           alt="image"
         />
