@@ -32,10 +32,10 @@ export default {
       },
       colors: {
         orange: {
-          DEFAULT: '#FF552e',
+          DEFAULT: '#FF662D',
         },
         gray: {
-          DEFAULT: '#212428',
+          DEFAULT: '#3A3B3F',
           100: '#00152b',
         },
       },

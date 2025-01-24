@@ -1,22 +1,22 @@
 <template>
   <footer
-    class="bg-[#161313] text-white pt-6 md:pt-10 border-[rgba(196,196,196,0.2)] border-t"
+    class="bg-gray text-white pt-6 md:pt-10 border-[rgba(196,196,196,0.2)] border-t"
   >
     <div
-      class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 pb-6 md:pb-10"
+      class="container mx-auto flex gap-10 pb-6 md:pb-10"
     >
       <div>
         <NuxtLink to="/">
           <img src="/images/logo.svg" alt="logo" />
         </NuxtLink>
-        <p class="text-[#adadad] font-normal leading-5 w-[235px]">
+        <p class="text-white font-normal leading-5 w-[235px]">
         {{ $t('footer_description') }}
         </p>
-        <CommonSocials class="mt-8" :socials="socialsData" />
+
       </div>
       <div>
         <h3 class="font-bold text-[20px] text-white inline-block pb-2">
-          Quick Links
+          {{ $t('quick_links') }}
         </h3>
         <ul>
           <li
@@ -31,6 +31,9 @@
             >
           </li>
         </ul>
+      </div>
+      <div>
+        <CommonSocials class="mt-8" :socials="socialsData" />
       </div>
 
     </div>

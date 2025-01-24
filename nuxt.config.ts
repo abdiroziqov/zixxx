@@ -21,6 +21,9 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxt/eslint", '@nuxtjs/i18n',],
+  fonts: {
+    families: [{ name: 'Roboto', provider: 'google' }],
+  },
   compatibilityDate: "2024-12-12",
   runtimeConfig: {
     public: {

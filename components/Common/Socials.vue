@@ -43,7 +43,6 @@ const socials = computed(() => [
         <li
           v-if="i?.link"
           :data-key="i.social"
-          class="relative bg-[rgba(255,85,46,0.3)] rounded-lg w-9 h-9 flex items-center justify-center hover:!bg-orange group transition-300"
           :class="[bgClass]"
         >
           <CommonSocialLink :social="i" :icon-class="iconClass" />

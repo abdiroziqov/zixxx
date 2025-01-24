@@ -40,6 +40,7 @@
 
 <script setup lang="ts">
 
+const { t } = useI18n()
 const route = useRoute()
 const isScrolled = ref(false)
 const langSwitcherActive = ref(false)
@@ -59,21 +60,22 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 
+
 const quickLinks = [
   {
-    name: 'Home',
+    name: t('home'),
     links: '/',
   },
   {
-    name: 'Products',
+    name: t('products'),
     links: '/products',
   },
   {
-    name: 'About Us',
+    name: t('about_us'),
     links: '/about-us',
   },
   {
-    name: 'Contact',
+    name: t('contact'),
     links: '/contact',
   },
 ]

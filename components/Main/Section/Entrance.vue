@@ -11,11 +11,9 @@
     </Swiper>
 
     <div class="container">
-      <div class="relative z-2 lg:pl-3 w-[47%]">
-        <p class="text-[54px] font-extrabold mb-5">
-          Discover Best
-          <span class="text-orange">Painting Art</span>
-          Design.
+      <div class="relative z-2 lg:pl-3 w-[55%]">
+        <p class="text-[54px] font-semibold mb-5">
+          Cмеси ZIXX для ремонта помещений
         </p>
         <p>
           Orci varius natoque penatibus et magnis dis parturient montes,
