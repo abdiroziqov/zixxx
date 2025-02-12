@@ -15,6 +15,11 @@
 
       </div>
       <div>
+        <p class="text-xl font-semibold font-white mb-3">{{ $t('social_media')}}</p>
+        <CommonSocials :socials="socialsData" />
+      </div>
+
+      <div>
         <h3 class="font-bold text-[20px] text-white inline-block pb-2">
           {{ $t('quick_links') }}
         </h3>
@@ -31,9 +36,6 @@
             >
           </li>
         </ul>
-      </div>
-      <div>
-        <CommonSocials class="mt-8" :socials="socialsData" />
       </div>
 
     </div>

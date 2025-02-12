@@ -44,6 +44,7 @@ const socials = computed(() => [
           v-if="i?.link"
           :data-key="i.social"
           :class="[bgClass]"
+          class="icon_class"
         >
           <CommonSocialLink :social="i" :icon-class="iconClass" />
         </li>
@@ -52,4 +53,8 @@ const socials = computed(() => [
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.icon_class ul li:first-child {
+  font-size: 30px;
+}
+</style>
