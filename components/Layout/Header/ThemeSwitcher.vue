@@ -10,7 +10,11 @@
       <Transition name="scale-fade" mode="out-in">
         <img
           :key="theme"
-          :src="theme === 'light' ? '/images/theme/sun.svg' : '/images/theme/moon.svg'"
+          :src="
+            theme === 'light'
+              ? '/images/theme/sun.svg'
+              : '/images/theme/moon.svg'
+          "
           class="text-xs"
           alt="image"
         />
@@ -20,22 +24,22 @@
 </template>
 
 <script lang="ts" setup>
-import { useTheme } from '~/store/useTheme'
+import { useTheme } from "~/store/useTheme";
 
-const storeTheme = useTheme()
+const storeTheme = useTheme();
 
-const theme = computed(() => storeTheme?.theme)
+const theme = computed(() => storeTheme?.theme);
 interface Emits {
-  (e: 'change-theme', theme: string): void
+  (e: "change-theme", theme: string): void;
 }
-const $emit = defineEmits<Emits>()
+const $emit = defineEmits<Emits>();
 
 const setTheme = () => {
-  storeTheme.changeTheme()
-  $emit('change-theme', storeTheme.theme)
-}
+  storeTheme.changeTheme();
+  $emit("change-theme", storeTheme.theme);
+};
 
 onMounted(() => {
-  $emit('change-theme', storeTheme.theme)
-})
+  $emit("change-theme", storeTheme.theme);
+});
 </script>
