@@ -1,8 +1,8 @@
 <template>
   <main>
-<!--    <LayoutHeader />-->
+    <LayoutHeader />
 
-<!--    <slot />-->
+    <slot />
 
     <footer>
       <LayoutFooter />

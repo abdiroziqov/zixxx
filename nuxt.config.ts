@@ -20,19 +20,22 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxt/eslint", '@nuxtjs/i18n',],
+  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxt/eslint", '@nuxtjs/i18n','vue-yandex-maps/nuxt'],
+  yandexMaps: {
+    apikey: '9191d860-42c5-4e70-98aa-8c92721bbdc3',
+  },
   fonts: {
     families: [{ name: 'Roboto', provider: 'google' }],
   },
   compatibilityDate: "2024-12-12",
   runtimeConfig: {
     public: {
-      apiBase: process.env.API_BASE,
+      apiBase: process.env.VITE_API_BASE,
     },
   },
   i18n: {
     langDir: 'locales',
-    baseUrl: 'https://saylov.uza.uz',
+    baseUrl: '',
     locales: [
       { code: 'en', iso: 'en', file: 'en' },
       { code: 'ru', iso: 'ru-RU', file: 'ru' },
@@ -41,13 +44,12 @@ export default defineNuxtConfig({
     lazy: true,
     useCookie: true,
     cookieKey: 'locale',
+    strategy: 'no_prefix',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'locale',
       onlyOnRoot: true, // recommended
       fallbackLocale: 'oz',
     },
-    defaultLocale: 'oz',
-    strategy: 'prefix_and_default',
   },
 });

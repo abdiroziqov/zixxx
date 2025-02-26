@@ -10,9 +10,9 @@
   >
     <div class="container">
       <div class="flex justify-between items-center py-4">
-        <NuxtLink to="/">
+        <a  href="/">
           <img src="/images/logo.svg" alt="logo" />
-        </NuxtLink>
+        </a>
         <div>
           <ul class="flex gap-4 text-white">
             <li

@@ -5,10 +5,10 @@
     <div
       class="container justify-between grid md:flex gap-5 md:gap-10 pb-6 md:pb-10"
     >
-      <div class="">
-        <NuxtLink to="/">
+      <div>
+        <a href="/">
           <img src="/images/logo.svg" alt="logo" />
-        </NuxtLink>
+        </a>
         <p class="text-white font-normal leading-5 w-[235px]">
         {{ $t('footer_description') }}
         </p>
