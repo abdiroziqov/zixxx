@@ -20,10 +20,7 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxt/eslint", '@nuxtjs/i18n','vue-yandex-maps/nuxt'],
-  yandexMaps: {
-    apikey: '9191d860-42c5-4e70-98aa-8c92721bbdc3',
-  },
+  modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxt/eslint", '@nuxtjs/i18n' ,'@nuxtjs/leaflet'],
   fonts: {
     families: [{ name: 'Roboto', provider: 'google' }],
   },
