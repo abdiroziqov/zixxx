@@ -28,11 +28,13 @@
             </li>
           </ul>
         </div>
-        <LayoutHeaderThemeSwitcher @change-theme="updateTheme" />
-        <LayoutHeaderLangSwitcher
-            :active="langSwitcherActive"
-            @change="langSwitcherActive = $event"
-        />
+        <div class="flex items-center gap-5">
+          <LayoutHeaderThemeSwitcher @change-theme="updateTheme" />
+          <LayoutHeaderLangSwitcher
+              :active="langSwitcherActive"
+              @change="langSwitcherActive = $event"
+          />
+        </div>
       </div>
     </div>
   </header>
