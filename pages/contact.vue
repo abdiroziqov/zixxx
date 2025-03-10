@@ -12,7 +12,7 @@
             <FormGroup
                 main-class="flex flex-col gap-1 col-span-2"
                 label="Your name"
-                label-class="!text-[#454545] text-sm font-medium leading-140 mb-1"
+                label-class="!text-white text-sm font-medium leading-140 mb-1"
             >
               <FormInput
                   v-model="form.values.name"
@@ -25,8 +25,8 @@
             </FormGroup>
             <FormGroup
                 label="Email"
-                label-class="!text-[#454545] text-sm font-medium leading-140 mb-1"
-                main-class="col-span-2"
+                label-class="!text-white text-sm font-medium leading-140 mb-1"
+                main-class="col-span-2 md:col-span-1"
             >
               <FormInput
                   v-model="form.values.email"
@@ -39,8 +39,8 @@
             </FormGroup>
             <FormGroup
                 label="city"
-                label-class="!text-[#454545] text-sm font-medium leading-140 mb-1"
-                main-class="col-span-2"
+                label-class="!text-white text-sm font-medium leading-140 mb-1"
+                main-class="col-span-2 md:col-span-1"
             >
               <FormInput
                   v-model="form.values.city"
@@ -55,15 +55,15 @@
             <FormGroup
                 label="Message"
                 main-class="flex flex-col gap-1 col-span-2 "
-                label-class="!text-[#454545] text-sm font-medium leading-140 mb-1 "
+                label-class="!text-white text-sm font-medium leading-140 mb-1 "
             >
               <FormTextarea
                   v-model="form.values.message"
                   is-transparent
                   :error="form.$v.value.message?.$error"
                   placeholder="Enter your message"
-                  input-class="pl-3 py-4 !h-[140px] !bg-[#393A3F] font-semibold leading-140 !text-dark !font-medium"
-                  class="!text-[#454545] !font-medium"
+                  input-class="pl-3 py-4 !h-[140px] !bg-[#393A3F] font-semibold leading-140 !text-white !font-medium"
+                  class="!text-white !font-medium"
               />
             </FormGroup>
 

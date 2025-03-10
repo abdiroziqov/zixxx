@@ -12,7 +12,7 @@
       :key="placeholder.length"
       v-model="inputValue"
       :placeholder="placeholder"
-      class="w-full h-full rounded-10 text-base sm:text-sm p-3 bg-transparent outline-none placeholder:text-gray-700 resize-none"
+      class="w-full h-full rounded-10 text-base sm:text-sm p-3 bg-transparent outline-none placeholder:text-[#89898C] resize-none"
       :class="inputClass"
       @blur="$emit('blur', $event)"
       @input="handleInput"

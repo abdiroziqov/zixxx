@@ -2,6 +2,7 @@
   <div>
     <MainSectionEntrance class="min-h-screen" />
     <MainSectionFacadeMaterials />
+    <MainSectionProducts />
     <MainSectionChoose />
     <MainSectionSatisfied />
   </div>

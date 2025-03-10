@@ -22,7 +22,7 @@
             >
               <NuxtLink
                 :to="link?.links"
-                class="hover:text-orange text-[#efefef] duration-300 dark:text-red-500"
+                class="hover:text-orange text-[#efefef] duration-300"
                 >{{ link?.name }}</NuxtLink
               >
             </li>
