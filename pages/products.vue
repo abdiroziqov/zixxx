@@ -4,7 +4,7 @@
 
 <template>
 <div>
-  hello man this is products page
+
 </div>
 </template>
 
