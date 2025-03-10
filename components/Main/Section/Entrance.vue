@@ -11,8 +11,8 @@
     </Swiper>
 
     <div class="container">
-      <div class="relative z-2 lg:pl-3 w-[55%]">
-        <p class="text-[54px] font-semibold mb-5">
+      <div class="relative z-2 lg:pl-3 md:w-[55%]">
+        <p class="text-3xl md:text-5xl font-semibold mb-5">
           Cмеси ZIXX для ремонта помещений
         </p>
         <p>

@@ -1,5 +1,5 @@
 <template>
-  <div class="dark:bg-theme bg-[#0F0F0F] py-8 md:py-16 dark:text-[#242424]">
+  <div class="bg-[#37383C] py-8 md:py-16">
     <div class="container">
       <div class="md:flex justify-between">
         <div class="md:w-[487px] mb-5 md:mb-0">

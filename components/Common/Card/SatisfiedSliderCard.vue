@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center">
-    <div class="relative p-6 bg-gray-800 rounded-2xl shadow-lg text-white">
+    <div class="relative p-6 bg-[#464646] rounded-2xl shadow-lg text-white">
       <!-- Profile Section -->
       <div class="flex items-center gap-4">
         <img

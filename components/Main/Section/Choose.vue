@@ -14,7 +14,7 @@
         </div>
       </div>
 
-     <BaseButton main-class="text-white" :text="t('about_company')" variant="orange" @click="$router.push('/about-us')" />
+     <BaseButton main-class="text-white" :text="t('about_company')" size="sm" variant="orange" @click="$router.push('/about-us')" />
     </div>
 
     <div class="relative flex justify-center">
@@ -23,7 +23,7 @@
         <div
             v-for="(label, index) in labels"
             :key="index"
-            class="absolute flex items-center gap-2 bg-white text-gray-800 py-2 px-4 rounded-lg shadow-md text-xs"
+            class="absolute hidden md:flex items-center gap-2 bg-white text-gray-800 py-2 px-4 rounded-lg shadow-md text-xs"
             :style="{ top: label.top, right: label.right }"
         >
           <i :class="label.icon" class="text-orange-500"/>

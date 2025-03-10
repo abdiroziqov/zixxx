@@ -83,7 +83,7 @@
         rights reserved.
       </p>
       <span class="hidden md:block">|</span>
-      <p>{{ $t('developed_and_designed_by') }} <span>Iceek</span></p>
+      <p>{{ $t('developed_and_designed_by') }} <a target="_blank" href="https://t.me/ilkhomab" class="font-bold text-base">Iceek</a></p>
     </div>
   </footer>
 </template>
