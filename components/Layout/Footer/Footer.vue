@@ -118,7 +118,7 @@ const socialsData = {
 const contactInfo = [
   { type: 'phone', value: '+99890 9350500' },
   { type: 'email', value: 'ZiXX@mail.com' },
-  { type: 'address', value: t('Ул.Навои - 3 Ташкент 100011 Узбекистан ru') },
+  { type: 'address', value: t('location_footer') },
 ];
 </script>
 

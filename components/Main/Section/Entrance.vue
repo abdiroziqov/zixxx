@@ -26,7 +26,7 @@
           <BaseButton
             :variant="'border'"
             :text="'See More'"
-            @click="$router.push('/about')"
+            @click="$router.push('/about-us')"
           />
         </div>
       </div>
@@ -65,11 +65,7 @@ const settings = computed(() => ({
 const list = [
   {
     id: 1,
-    image: '',
-  },
-  {
-    id: 2,
-    image: '',
+    image: '/images/main.png',
   },
 ]
 

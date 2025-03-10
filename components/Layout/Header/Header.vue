@@ -83,7 +83,7 @@ const quickLinks = [
 ]
 
 
-const currentTheme = ref('')
+const currentTheme = ref('dark')
 const updateTheme = (val: string) => {
   currentTheme.value = val
 }

@@ -37,6 +37,8 @@ export default {
         gray: {
           DEFAULT: '#3A3B3F',
           100: '#00152b',
+        }, theme: {
+          DEFAULT: '#F7F8FA',
         },
       },
 
