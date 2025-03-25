@@ -46,8 +46,8 @@ const features = [
 ];
 
 const labels = [
-  { text: "Качественное работа", icon: "fas fa-tools", top: "85%", right: "50%" },
-  { text: "Надежно и быстро", icon: "fa-solid fa-trowel-bricks", top: "10%", right: "0" },
-  { text: "Доставка по Узбекистану", icon: "fas fa-truck", top: "30%", right: "-15%" }
+  { text: "Своевременная отгрузка", icon: "fas fa-truck", top: "30%", right: "-15%" },
+  { text: " Доступная цена", icon: "fa-solid fa-trowel-bricks", top: "15%", right: "10%" },
+  { text: "Наполняемый ассортимент", icon: "fas fa-tools", top: "66%", right: "50%" },
 ];
 </script>

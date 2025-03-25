@@ -4,7 +4,7 @@
       <BaseBreadcrumb :breadcrumb="menu" />
       <div class="w-full lg:w-[782px] mx-auto">
         <div
-            class="flex md:justify-center flex-col pt-4 pb-10 gap-4"
+            class="flex md:justify-center flex-col pt-4 pb-10 gap-6"
         >
           <h3 class="section-title">{{ $t('feedback_form') }}</h3>
 
@@ -96,6 +96,7 @@
             :center="[41.298152, 69.273924]"
       />
       </ClientOnly>
+          <CommonLocations />
 
 <!--              :center="[location?.long ?? 0, location?.lat ?? 0]"-->
         </div>

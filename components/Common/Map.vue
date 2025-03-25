@@ -7,15 +7,16 @@
         name="OpenStreetMap"
     />
 
-    <LMarker :lat-lng="[40.103107, 65.373996]">
+    <LMarker :lat-lng="[41.260491, 69.358610]">
+      <LIcon :icon-url="`https://api.iconify.design/emojione-monotone:factory.svg`" :icon-size="iconSize" />
+    </LMarker>
+    <LMarker :lat-lng="[40.154665, 65.144495]">
       <LIcon :icon-url="`https://zixx.uz/images/yootheme/logo_blue.png`" :icon-size="iconSize" />
     </LMarker>
-    <LMarker :lat-lng="[41.319542, 69.261995]">
+    <LMarker :lat-lng="[39.139957, 66.886249]">
       <LIcon :icon-url="`https://zixx.uz/images/yootheme/logo_blue.png`" :icon-size="iconSize" />
     </LMarker>
-    <LMarker :lat-lng="[41.311550, 69.223170]">
-      <LIcon :icon-url="`https://zixx.uz/images/yootheme/logo_blue.png`" :icon-size="iconSize" />
-    </LMarker>
+    <LControlZoom position="topright" />
   </LMap>
 </template>
 
@@ -38,6 +39,9 @@ const changeIcon = () => {
     iconWidth.value = Math.floor(iconHeight.value / 2);
   }
 };
+
+
+const factoryImage = '/images/factory.svg';
 </script>
 
 <style>
@@ -49,5 +53,8 @@ const changeIcon = () => {
   font-size: large;
   text-align: center;
   line-height: 21px;
+}
+.leaflet-marker-icon {
+  width: 40px !important;
 }
 </style>
