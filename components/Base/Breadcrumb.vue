@@ -37,7 +37,7 @@
             'pointer-events-none !text-white ':
               index === breadcrumb?.length - 1,
           }"
-          class="transition-300 flex cursor-pointer items-center text-black leading-130 text-sm font-semibold min-w-max group-last:min-w-[100px] sm:group-last:min-w-[200px] breadcrumb-menu line-clamp-1 whitespace-nowrap hover:text-primary"
+          class="transition-300 flex cursor-pointer items-center leading-130 text-sm font-semibold min-w-max group-last:min-w-[100px] sm:group-last:min-w-[200px] breadcrumb-menu line-clamp-1 whitespace-nowrap hover:text-primary"
         >
           {{ item?.title }}
         </NuxtLink>

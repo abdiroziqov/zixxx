@@ -11,7 +11,7 @@
     <div class="container">
       <div class="flex justify-between items-center py-4">
         <a  href="/">
-          <img src="/images/logo.svg" alt="logo" />
+          <img src="/logo.svg" alt="logo" />
         </a>
         <div>
           <ul class="flex gap-4 text-white">
