@@ -23,11 +23,11 @@
         <div
             v-for="(label, index) in labels"
             :key="index"
-            class="absolute hidden md:flex items-center gap-2 bg-white text-gray-800 py-2 px-4 rounded-lg shadow-md text-xs"
+            class="absolute hidden md:flex items-center gap-2 bg-white text-gray-800 p-2 rounded-lg shadow-md text-xs"
             :style="{ top: label.top, right: label.right }"
         >
-          <i :class="label.icon" class="text-orange-500"/>
-          <p>{{ label.text }}</p>
+          <i :class="label.icon" class="text-orange-500 text-lg"/>
+          <p class="basis-2/4 w-min">{{ label.text }}</p>
         </div>
       </div>
     </div>
@@ -46,8 +46,8 @@ const features = [
 ];
 
 const labels = [
-  { text: "Своевременная отгрузка", icon: "fas fa-truck", top: "30%", right: "-15%" },
-  { text: " Доступная цена", icon: "fa-solid fa-trowel-bricks", top: "15%", right: "10%" },
+  { text: "Своевременная отгрузка", icon: "fas fa-truck", top: "23%", right: "0" },
+  { text: " Доступная цена", icon: "fas fa-wrench", top: "15%", right: "60%" },
   { text: "Наполняемый ассортимент", icon: "fas fa-tools", top: "66%", right: "50%" },
 ];
 </script>

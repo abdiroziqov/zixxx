@@ -9,7 +9,7 @@
         <a href="/">
           <img src="/images/logo.svg" alt="logo" />
         </a>
-        <p class="text-white font-normal leading-5 w-[175px]">
+        <p class="text-white font-normal leading-5 w-[209px]">
         {{ $t('footer_description') }}
         </p>
 

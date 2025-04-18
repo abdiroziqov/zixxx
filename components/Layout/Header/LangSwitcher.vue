@@ -6,7 +6,7 @@
         : 'text-dark border-gray-3 hover:bg-gray-3'
     } ${headClass}`"
       :show="showDropdown"
-      body-class="card-body !w-[200px] rounded-[16px]  border  bg-white max-md:right-0 max-md:left-auto"
+      body-class="card-body !w-[200px] rounded-[16px]  border  max-md:right-0 max-md:left-auto"
       @toggle="handleDropdownToggle"
   >
     <template #head>
@@ -41,14 +41,14 @@
       <div
           v-for="(lang, index) in languagesList"
           :key="index"
-          class="w-full group bg-white hover:bg-gray-3 transition-300 duration-200 hover:!bg-red/[6%]"
+          class="w-full group bg-dark hover:bg-gray-3 transition-300 duration-200 hover:!bg-red/[6%]"
           @click="changeLocale(lang?.code)"
       >
         <div
-            class="group flex items-center justify-between gap-4 py-2.5 px-4 cursor-pointer transition-300 border-b border-b-gray-3 group-last:border-b-0"
+            class="group flex items-center justify-between gap-4 py-2.5 px-4 cursor-pointer transition-300 border-b border-b-gray-300 group-last:border-b-0"
         >
           <span
-              class="text-[15px] font-normal leading-normal text-dark group-hover:text-red transition-300"
+              class="text-[15px] font-normal leading-normal !text-dark group-hover:text-red transition-300"
           >
             {{ lang.name }}
           </span>
@@ -93,7 +93,6 @@ onMounted(async () => {
 <style scoped>
 .card-body {
   border-radius: 16px !important;
-  background: #fff;
   box-shadow: 0 3.459px 2.214px 0 rgba(0, 0, 0, 0.01),
   0 8.313px 5.32px 0 rgba(0, 0, 0, 0.01),
   0 15.652px 10.017px 0 rgba(0, 0, 0, 0.01),

@@ -9,7 +9,7 @@
     class="z-10 transition-all duration-300"
   >
     <div class="container">
-      <div class="flex justify-between items-center py-4">
+      <div class="flex justify-between items-center">
         <a  href="/">
           <img src="/logo.svg" alt="logo" />
         </a>
