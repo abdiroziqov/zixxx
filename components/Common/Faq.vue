@@ -11,7 +11,7 @@
         @click="openItem(item.id)"
       >
         <h4
-          class="font-medium text-lg text-gray-100 !leading-130 transition-colors duration-300 group-hover:text-orange"
+          class="font-medium text-lg text-white !leading-130 transition-colors duration-300 group-hover:text-orange"
         >
           {{ item.question }}
         </h4>
@@ -22,7 +22,7 @@
       </div>
       <CollapseTransition>
         <div v-if="selectedItem === item.id" class="pb-4">
-          <p class="!leading-130 text-black" :class="answerClass">
+          <p class="!leading-130 text-white opacity-85" :class="answerClass">
             {{ item.answer }}
           </p>
         </div>
@@ -79,7 +79,7 @@ const openItem = (id: number) => {
 .plusminus::after {
   content: '';
   display: block;
-  background-color: #00152b;
+  background-color: #FF662D;
   position: absolute;
   top: 50%;
   left: 0;

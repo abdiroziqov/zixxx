@@ -121,10 +121,6 @@ const menu = computed(() => {
   ]
 })
 
-const center = ref([41.298152, 69.273924]);
-const markers = ref([
-]);
-
 const buttonLoading = ref(false)
 const form = useForm(
     {

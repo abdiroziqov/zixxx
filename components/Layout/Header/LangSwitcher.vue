@@ -6,7 +6,7 @@
         : 'text-dark border-gray-3 hover:bg-gray-3'
     } ${headClass}`"
       :show="showDropdown"
-      body-class="card-body !w-[200px] rounded-[16px]  border  max-md:right-0 max-md:left-auto"
+      body-class="card-body !w-[200px] rounded-[16px]  border md:right-0 md:left-auto"
       @toggle="handleDropdownToggle"
   >
     <template #head>
