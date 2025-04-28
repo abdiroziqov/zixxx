@@ -1,12 +1,11 @@
 <template>
-  <div class="bg-[#37383C] py-8 md:py-16">
+  <div class="bg-[#F0F2F1] dark:bg-[#37383C] py-8 md:py-16">
     <div class="container">
       <div class="md:flex justify-between">
         <div class="md:w-[487px] mb-5 md:mb-0">
-          <p class="font-semibold text-3xl leading-130">Что говорят о нас наши довольные клиенты</p>
+          <p class="font-semibold text-3xl leading-130">{{ $t('satisfied_customers') }}</p>
           <p class="text-sm mt-1 opacity-80 leading-6">
-            Мы очень рады использовать ZIXX. мы бы порекомендовали всем. После этого остается только работать с компанией
-            zixx и еще раз всем рекомендоваю!!!
+            {{    $t('satisfied_customers_description') }}
           </p>
           <div class="mt-4 flex items-center gap-3">
             <img src="/images/group-people.svg" alt="image">

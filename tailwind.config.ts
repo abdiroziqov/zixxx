@@ -34,6 +34,9 @@ export default {
         orange: {
           DEFAULT: '#FF662D',
         },
+        dark: {
+          DEFAULT: '#232429',
+        },
         gray: {
           DEFAULT: '#3A3B3F',
           100: '#00152b',

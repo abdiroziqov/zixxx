@@ -1,15 +1,17 @@
 <template>
   <footer
-    class="bg-gray text-white pt-6 md:pt-10 border-[rgba(196,196,196,0.2)] border-t"
+    class="bg-white dark:bg-gray  dark:text-white text-dark pt-6 md:pt-10 border-[rgba(196,196,196,0.2)] border-t"
   >
     <div
       class="container justify-between grid md:flex gap-5 md:gap-10 pb-6 md:pb-10"
     >
       <div>
         <a href="/">
-          <img src="/images/logo.svg" alt="logo" />
+          <img class="hidden dark:block" src="/logo.svg" alt="logo" />
+          <img class="dark:hidden" src="/logo1.svg" alt="logo" />
+
         </a>
-        <p class="text-white font-normal leading-5 w-[209px]">
+        <p class="dark:text-white text-dark font-normal text-xs leading-140 w-[209px]">
         {{ $t('footer_description') }}
         </p>
 
@@ -21,7 +23,7 @@
     </div>
 
     <div>
-      <h3 class="font-bold text-[20px] text-white inline-block pb-2">
+      <h3 class="font-bold text-[20px] dark:text-white  text-dark inline-block pb-2">
         {{ $t('quick_links') }}
       </h3>
       <ul>
@@ -32,14 +34,14 @@
         >
           <NuxtLink
               :to="link?.links"
-              class="hover:text-orange text-[#efefef] duration-300"
+              class="hover:text-orange  dark:text-[#efefef] text-dark duration-300 tracking-[0.2px] opacity-80"
           >{{ link?.name }}</NuxtLink
           >
         </li>
       </ul>
     </div>
     <div>
-      <h3 class="font-bold text-[20px] text-white inline-block pb-2">
+      <h3 class="font-bold text-[20px] dark:text-white text-dark inline-block pb-2">
         {{ $t('contact_us') }}
       </h3>
       <ul>
@@ -51,20 +53,20 @@
           <template v-if="contact.type === 'phone'">
           <div>
 
-            <a :href="`tel:${contact.value}`" class="hover:text-orange text-[#efefef] duration-300 flex gap-2 items-center">
-              <i class="icon-phone  text-2xl"/>
+            <a :href="`tel:${contact.value}`" class="hover:text-orange dark:text-[#efefef] text-dark duration-300 flex gap-2 items-center">
+              <i class="icon-phone text-2xl"/>
               {{ contact.value }}
             </a>
           </div>
           </template>
           <template v-else-if="contact.type === 'email'">
-            <a :href="`mailto:${contact.value}`" class="hover:text-orange text-[#efefef] duration-300 flex gap-2 items-center">
+            <a :href="`mailto:${contact.value}`" class="hover:text-orange dark:text-[#efefef] text-dark duration-300 flex gap-2 items-center">
               <i class="icon-letter text-2xl"/>
               {{ contact.value }}
             </a>
           </template>
           <template v-else>
-            <a target="_blank" href="https://yandex.uz/maps/geo/5403718816/?ll=69.265099%2C41.319533&z=19.86" class="hover:text-orange text-[#efefef] duration-300 flex gap-2 items-center">
+            <a target="_blank" href="https://yandex.uz/maps/geo/5403718816/?ll=69.265099%2C41.319533&z=19.86" class="hover:text-orange dark:text-[#efefef] text-dark duration-300 flex gap-2 items-center">
               <i class="icon-location text-2xl"/>
               {{ contact.value }}
             </a>
