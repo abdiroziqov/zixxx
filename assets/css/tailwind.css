@@ -7,8 +7,6 @@
 
 body {
     overflow-x: hidden;
-    background:#232429;
-    color: #fff;
     font-family: Roboto, sans-serif;
 }
 
@@ -76,4 +74,7 @@ img {
 .flex-between {
     display: flex;
     justify-content: space-between;
+}
+.leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+    display: none;
 }

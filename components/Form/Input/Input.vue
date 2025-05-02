@@ -22,7 +22,7 @@
       }"
       :id="inputId"
       ref="Input"
-      class="w-full h-full rounded-10 text-sm font-semibold p-3 text-white dark:!text-black bg-transparent outline-none placeholder:text-[#89898C]"
+      class="w-full h-full rounded-10 text-sm font-semibold p-3 text-white outline-none placeholder:text-[#89898C]"
       :value="modelValue"
       :class="[
         inputClass,

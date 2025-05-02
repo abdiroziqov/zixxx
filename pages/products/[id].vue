@@ -1,5 +1,5 @@
 <template>
-<div class="bg-[#3A3B3F]">
+<div class="bg-gray">
   <div class="relative container py-6">
     <BaseBreadcrumb :breadcrumb="menu" />
     <div class="flex gap-9  items-center justify-center mt-10">

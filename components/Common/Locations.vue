@@ -1,4 +1,4 @@
 <template>
-  <div>hello man
+  <div>common locations
   </div>
 </template>

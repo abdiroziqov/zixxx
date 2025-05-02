@@ -1,17 +1,15 @@
 <template>
-  <header
-    :class="{
-      'bg-transparent': !isScrolled,
-      'bg-black': isScrolled,
-      'fixed !w-full': isHomeRoute,
-      relative: !isHomeRoute,
-    }"
-    class="z-10 transition-all duration-300"
-  >
+  <header :class="{
+    'bg-transparent': !isScrolled,
+    'bg-black dark:bg-dark': isScrolled,
+    'fixed !w-full': isHomeRoute,
+    relative: !isHomeRoute,
+  }" class="z-10 transition-all duration-300">
     <div class="container">
       <div class="flex justify-between items-center">
-        <a  href="/">
-          <img src="/logo.svg" alt="logo" />
+        <a href="/">
+          <img class="hidden dark:block" src="/logo.svg" alt="logo" />
+          <img class="dark:hidden" src="/logo1.svg" alt="logo" />
         </a>
         <div>
           <ul class="flex gap-4 text-white">
@@ -30,10 +28,7 @@
         </div>
         <div class="flex items-center gap-5">
           <LayoutHeaderThemeSwitcher @change-theme="updateTheme" />
-          <LayoutHeaderLangSwitcher
-              :active="langSwitcherActive"
-              @change="langSwitcherActive = $event"
-          />
+          <LayoutHeaderLangSwitcher :active="langSwitcherActive" @change="langSwitcherActive = $event" />
         </div>
       </div>
     </div>

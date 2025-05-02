@@ -1,15 +1,15 @@
 <template>
- <main class="md:pb-10 pb-10">
+ <main class="md:pb-10 pb-10 bg-red-400 dark:bg-white">
  <div class="main__about py-10">
    <div class="container ">
      <div class="md:w-[640px]">
-       <h3 class="text-3xl leading-130">{{ $t('company_razata') }}</h3>
-       <p class="text-base md:text-lg mt-6"> {{ $t('company_rzata_text') }}</p>
+       <h3 class="text-3xl font-semibold leading-130 tracking-[1.2px] text-gray-800 dark:text-white">{{ $t('company_razata') }}</h3>
+       <p class="text-lg leading-140 mt-6 text-dark"> {{ $t('company_rzata_text') }}</p>
      </div>
    </div>
  </div>
    <div class="container my-4">
-     <CommonFaq clas="py-6" :faq="faq" />
+     <CommonFaq class="py-6 w-[728px] mx-auto" :faq="faq" />
    </div>
  </main>
 </template>
