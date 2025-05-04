@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-  <div class="relative container bg-white dark:!bg-dark">
+  <div class="bg-white dark:!bg-dark">
+  <div class="relative container ">
       <BaseBreadcrumb :breadcrumb="menu" />
       <div class="w-full lg:w-[782px] mx-auto">
         <div
