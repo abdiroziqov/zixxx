@@ -39,6 +39,9 @@ const socials = computed(() => [
 <template>
   <div class="flex-y-center gap-3 md:gap-4">
     <ul class="flex gap-4">
+      you tube
+      bio link
+      whatsapp
       <template v-for="i in socials" :key="i.social">
         <li
           v-if="i?.link"

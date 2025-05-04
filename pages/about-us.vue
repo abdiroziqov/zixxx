@@ -2,14 +2,15 @@
  <main class="md:pb-10 pb-10 bg-white dark:bg-dark">
  <div class="main__about py-10 bg-[url('/public/images/about.png')] bg-cover bg-no-repeat">
    <div class="container ">
-     <div class="md:w-[640px]">
+     <div class="md:w-[500px]">
        <h3 class="text-3xl font-semibold leading-130 tracking-[1.2px] text-white">{{ $t('company_razata') }}</h3>
        <p class="text-lg leading-140 mt-6 text-white"> {{ $t('company_rzata_text') }}</p>
      </div>
    </div>
  </div>
-   <div class="container my-4 ">
-     <CommonFaq class="py-6 w-[728px] mx-auto" :faq="faq" />
+   <div class="container my-4 mt-10">
+     <h3 class="text-4xl font-semibold leading-130 tracking-[1.2px] text-white">{{ $t('F.A.Q.') }}</h3>
+     <CommonFaq class="" :faq="faq" />
    </div>
  </main>
 </template>
