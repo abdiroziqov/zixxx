@@ -116,7 +116,8 @@ const socialsData = {
   facebook: 'https://www.facebook.com/zixx.uz/',
   telegram: 'https://t.me/gips_mel',
   whatsapp: 'https://wa.me/998977079345',
-  youtube: 'https://www.youtube.com/@zixx.uzbekistan'
+  youtube: 'https://www.youtube.com/@zixx.uzbekistan',
+  link: 'https://www.youtube.com/@zixx.uzbekistan'
 }
 const contactInfo = [
   { type: 'phone', value: '+998 90-935-05-00' },

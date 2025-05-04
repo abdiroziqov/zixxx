@@ -7,8 +7,8 @@ const props = defineProps<{
     youtube?: string
     telegram?: string
     facebook?: string
-    pinterest?: string
-    linkedin?: string
+    whatsapp?: string
+    link?: string
   }
 }>()
 
@@ -22,26 +22,27 @@ const socials = computed(() => [
     link: props.socials?.telegram ?? '',
   },
   {
-    social: 'Linkedin',
-    link: props.socials?.linkedin ?? '',
+    social: 'Whatsapp',
+    link: props.socials?.whatsapp ?? '',
   },
   {
     social: 'Facebook',
     link: props.socials?.facebook ?? '',
   },
   {
-    social: 'Pinterest',
-    link: props.socials?.pinterest ?? '',
+    social: 'Youtube',
+    link: props.socials?.youtube ?? '',
   },
+  {
+    social: 'Link',
+    link: props.socials.link ?? '',
+  }
 ])
 </script>
 
 <template>
   <div class="flex-y-center gap-3 md:gap-4">
-    <ul class="flex gap-4">
-      you tube
-      bio link
-      whatsapp
+    <ul class="flex gap-2.5">
       <template v-for="i in socials" :key="i.social">
         <li
           v-if="i?.link"
