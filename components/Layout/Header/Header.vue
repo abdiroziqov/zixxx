@@ -1,10 +1,10 @@
 <template>
-  <header :class="{
-    'bg-transparent': !isScrolled,
-    'bg-black dark:bg-dark': isScrolled,
-    'fixed !w-full': isHomeRoute,
-    relative: !isHomeRoute,
-  }" class="z-10 transition-all duration-300">
+  <header :class="[
+  isHomeRoute
+    ? (isScrolled ? 'bg-black dark:bg-dark' : 'bg-transparent')
+    : (isScrolled ? 'bg-black dark:bg-dark' : 'bg-dark'),
+  isHomeRoute ? 'fixed !w-full' : 'relative'
+]" class="z-10 transition-all duration-300">
     <div class="container">
       <div class="flex justify-between items-center">
         <a href="/">

@@ -1,14 +1,14 @@
 <template>
- <main class="md:pb-10 pb-10 bg-red-400 dark:bg-white">
- <div class="main__about py-10">
+ <main class="md:pb-10 pb-10 bg-white dark:bg-dark">
+ <div class="main__about py-10 bg-[url('/public/images/about.png')] bg-cover bg-no-repeat">
    <div class="container ">
      <div class="md:w-[640px]">
-       <h3 class="text-3xl font-semibold leading-130 tracking-[1.2px] text-gray-800 dark:text-white">{{ $t('company_razata') }}</h3>
-       <p class="text-lg leading-140 mt-6 text-dark"> {{ $t('company_rzata_text') }}</p>
+       <h3 class="text-3xl font-semibold leading-130 tracking-[1.2px] text-white">{{ $t('company_razata') }}</h3>
+       <p class="text-lg leading-140 mt-6 text-white"> {{ $t('company_rzata_text') }}</p>
      </div>
    </div>
  </div>
-   <div class="container my-4">
+   <div class="container my-4 ">
      <CommonFaq class="py-6 w-[728px] mx-auto" :faq="faq" />
    </div>
  </main>
@@ -34,11 +34,6 @@ const faq = [
 </script>
 
 <style>
-.main__about {
-  background-image: url('/public/images/about.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 @media (max-width: 768px) {
   .main__about {

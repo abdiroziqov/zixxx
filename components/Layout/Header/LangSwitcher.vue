@@ -1,12 +1,19 @@
 <template>
   <base-dropdown :head-class="`sm:px-4 py-3 flex items-center gap-2 text-sm font-medium leading-130 font-normal transition-300 cursor-pointer${isTransparent || store?.isExistImage
-      ? 'text-white border-white/10 hover:bg-white/10'
-      : 'text-dark border-gray-3 hover:bg-gray-3'
+    ? 'text-white border-white/10 hover:bg-white/10'
+    : 'text-dark border-gray-3 hover:bg-gray-3'
     } ${headClass}`" :show="showDropdown"
     body-class="card-body !w-[200px] rounded-[16px]  border md:right-0 md:left-auto" @toggle="handleDropdownToggle">
     <template #head>
-      <div class="flex items-center">
-        <i class="icon-world hidden sm:block text-xl text-dark" />
+      <div class="flex items-center text-white">
+        <svg class="hidden sm:block" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          viewBox="0 0 24 24">
+          <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            color="currentColor">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 12c0 6 4 10 4 10s4-4 4-10s-4-10-4-10s-4 4-4 10m13 3H3m18-6H3" />
+          </g>
+        </svg>
         <span class="hidden sm:inline-block ml-2 mr-1 text-sm font-semibold leading-normal cursor-pointer">{{
           currentLanguage?.name }}</span>
         <span class="inline-block sm:hidden ml-2 mr-1 text-sm font-semibold leading-normal cursor-pointer">{{
@@ -20,11 +27,11 @@
     </template>
     <template #body>
       <div v-for="(lang, index) in languagesList" :key="index"
-        class="w-full group bg-dark hover:bg-gray-3 transition-300 duration-200 hover:!bg-red/[6%]"
+        class="w-full group dark:bg-white  hover:bg-gray-3 transition-300 duration-200 hover:!bg-red/[6%]"
         @click="changeLocale(lang?.code)">
         <div
           class="group flex items-center justify-between gap-4 py-2.5 px-4 cursor-pointer transition-300 border-b border-b-gray-300 group-last:border-b-0">
-          <span class="text-[15px] font-normal leading-normal !text-dark group-hover:text-red transition-300">
+          <span class="text-[15px] font-normal leading-normal text-red-500 group-hover:text-red transition-300">
             {{ lang.name }}
           </span>
           <transition name="fade">

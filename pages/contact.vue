@@ -43,9 +43,9 @@
                 main-class="col-span-2 md:col-span-1"
             >
               <FormInput
-                  v-model="form.values.city"
+                  v-model="form.values.country"
                   is-transparent
-                  :error="form.$v.value.city?.$error"
+                  :error="form.$v.value.country?.$error"
                   :placeholder="$t('enter_ur_city')"
                   input-class="pl-3 py-4 dark:bg-[#393A3F] bg-[#393a3f1a] !font-medium text-black"
                   class="!font-medium"
@@ -62,7 +62,7 @@
                   is-transparent
                   :error="form.$v.value.message?.$error"
                   :placeholder="$t('enter_ur_message')"
-                  input-class="pl-3 py-4 !h-[140px] dark:bg-[#393A3F] bg-[#393a3f1a] font-semibold leading-140 !text-white !font-medium"
+                  input-class="pl-3 py-4 !h-[140px] dark:bg-[#393A3F] bg-[#393a3f1a] font-semibold leading-140 text-dark dark:text-white !font-medium"
                   class="!text-white !font-medium"
               />
             </FormGroup>
@@ -126,13 +126,13 @@ const form = useForm(
       name: '',
       email: '',
       message: '',
-      city: '',
+      country: '',
     },
     {
       email: { required, email },
       name: { required },
       message: { required },
-      city: {},
+      country: {},
     },
 )
 
@@ -142,12 +142,12 @@ const sendMail = () => {
     buttonLoading.value = true
     try {
       useApi()
-          .$post('auction/contact', {
+          .$post('contact', {
             body: {
               name: form.values.name,
               message: form.values.message,
               email: form.values.email,
-              city: form.values.city,
+              country: form.values.country,
             },
           })
           .then(() => {
@@ -155,7 +155,7 @@ const sendMail = () => {
             form.values.name = ''
             form.values.message = ''
             form.values.email = ''
-            form.values.city = ''
+            form.values.country = ''
             trigger.value = true
           })
     } catch (e) {
