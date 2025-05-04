@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:!bg-dark">
+  <div class="bg-white dark:!bg-dark pb-16">
   <div class="relative container ">
       <BaseBreadcrumb :breadcrumb="menu" />
       <div class="w-full lg:w-[782px] mx-auto">
@@ -96,8 +96,22 @@
             :center="[41.298152, 69.273924]"
       />
       </ClientOnly>
+
+
         </div>
       </div>
+    <div class="">
+
+    <h3 class="font-semibold tracking-[1.2px] leading-130 text-3xl dark:text-white text-dark">{{ $t('factory_locations') }}</h3>
+      <div class="grid grid-cols-3 gap-6">
+        <CommonCardFactoryLocation :card="{
+            name: 'Завод',
+            description: 'Ташкент, проспект А. Навои, дом 3',
+            image: 'https://picsum.photos/100/100',
+        }"
+      /></div>
+    </div>
+
     </div>
   </div>
 </template>
