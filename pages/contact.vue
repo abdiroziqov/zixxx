@@ -96,7 +96,6 @@
             :center="[41.298152, 69.273924]"
       />
       </ClientOnly>
-<!--          <CommonLocations />-->
         </div>
       </div>
     </div>

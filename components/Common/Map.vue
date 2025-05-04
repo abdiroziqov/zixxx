@@ -8,13 +8,13 @@
     />
 
     <LMarker :lat-lng="[41.260491, 69.358610]">
-      <LIcon :icon-url="`https://api.iconify.design/emojione-monotone:factory.svg`" :icon-size="iconSize" />
+      <LIcon :icon-url="iconUrl" :icon-size="iconSize" />
     </LMarker>
     <LMarker :lat-lng="[40.154665, 65.144495]">
-      <LIcon :icon-url="`https://zixx.uz/images/yootheme/logo_blue.png`" :icon-size="iconSize" />
+      <LIcon :icon-url="iconUrl" :icon-size="iconSize" />
     </LMarker>
     <LMarker :lat-lng="[39.139957, 66.886249]">
-      <LIcon :icon-url="`https://zixx.uz/images/yootheme/logo_blue.png`" :icon-size="iconSize" />
+      <LIcon :icon-url="iconUrl" :icon-size="iconSize" />
     </LMarker>
     <LControlZoom position="topright" />
   </LMap>
@@ -30,7 +30,9 @@ onMounted(() => {
 const iconWidth = ref(21);
 const iconHeight = ref(42);
 
-const iconUrl = computed(() => `https://zixx.uz/images/yootheme/logo_blue.png`);
+
+
+const iconUrl = computed(() => `/logo1.svg`);
 const iconSize = computed(() => [iconWidth.value, iconHeight.value]);
 
 const changeIcon = () => {
