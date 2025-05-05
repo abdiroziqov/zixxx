@@ -7,17 +7,17 @@ export const useLanguageSwitcher = () => {
     {
       name: "O'zbekcha",
       code: 'uz',
-      flag: '/static/front/svg/flag/mobile/uz.svg',
+      flag: '/images/uz.svg',
     },
     {
       name: 'English',
       code: 'en',
-      flag: '/static/front/svg/flag/mobile/en.svg',
+      flag: '/images/uk.svg',
     },
     {
       name: 'Русский',
       code: 'ru',
-      flag: '/static/front/svg/flag/mobile/global.svg',
+      flag: 'images/ru.svg',
     },
   ]
 

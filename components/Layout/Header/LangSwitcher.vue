@@ -4,6 +4,7 @@
     : 'text-dark border-gray-3 hover:bg-gray-3'
     } ${headClass}`" :show="showDropdown"
     body-class="card-body !w-[200px] rounded-[16px]  border md:right-0 md:left-auto" @toggle="handleDropdownToggle">
+
     <template #head>
       <div class="flex items-center text-white">
         <svg class="hidden sm:block" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -21,21 +22,27 @@
             ? currentLanguage?.name?.slice(0, 3)
             : currentLanguage?.name?.slice(0, 2)
         }}</span>
-        <i :class="isTransparent || store?.isExistImage ? 'text-white' : 'text-dark'
-          " class="icon-chevron-down text-base cursor-pointer" />
       </div>
     </template>
     <template #body>
       <div v-for="(lang, index) in languagesList" :key="index"
-        class="w-full group dark:bg-white  hover:bg-gray-3 transition-300 duration-200 hover:!bg-red/[6%]"
+
+        class="w-full group bg-white dark:bg-dark hover:bg-gray-3 transition-300 duration-200 hover:!bg-red/[6%]"
         @click="changeLocale(lang?.code)">
         <div
           class="group flex items-center justify-between gap-4 py-2.5 px-4 cursor-pointer transition-300 border-b border-b-gray-300 group-last:border-b-0">
-          <span class="text-[15px] font-normal leading-normal text-red-500 group-hover:text-red transition-300">
+         <div class="flex items-center gap-4">
+           <img
+               v-if="lang?.flag"
+               :src="lang.flag"
+               alt="flag"
+           />
+           <span class="text-[15px] font-normal leading-normal text-dark dark:text-white group-hover:text-red transition-300">
             {{ lang.name }}
           </span>
+         </div>
           <transition name="fade">
-            <i v-if="lang?.code === currentLanguage?.code" class="icon-check text-red text-xl" />
+            <svg v-if="lang?.code === currentLanguage?.code" class="text-orange" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>
           </transition>
         </div>
       </div>

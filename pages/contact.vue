@@ -185,4 +185,26 @@ function verifyMethod(response: any) {
 function expiredMethod() {
   captchaToken.value = null
 }
+
+
+// const cards = [{
+//   name: 'Завод',
+//   description: 'Ташкент, проспект А. Навои, дом 3',
+//   image: 'https://picsum.photos/100/100',
+// },
+// {
+//   name: 'Завод',
+//   description: 'Ташкент, проспект А. Навои, дом 3',
+//   image: 'https://picsum.photos/100/100',
+// },
+// {
+//   name: 'Завод',
+//   description: 'Ташкент, проспект А. Навои, дом 3',
+//   image: 'https://picsum.photos/100/100',
+// },
+// {
+//   name: 'Завод',
+//   description: 'Ташкент, проспект А. Навои, дом 3',
+//   image: 'https://picsum.photos/100/100',
+// }];
 </script>
