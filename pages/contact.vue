@@ -102,7 +102,7 @@
       </div>
     <div class="">
 
-    <h3 class="font-semibold tracking-[1.2px] leading-130 text-3xl dark:text-white text-dark">{{ $t('factory_locations') }}</h3>
+    <h3 class="font-semibold tracking-[1.2px] leading-130 text-3xl dark:text-white text-dark mb-4  mf:mb-6">{{ $t('factory_locations') }}</h3>
       <div class="grid grid-cols-3 gap-6">
         <CommonCardFactoryLocation :card="{
             name: 'Завод',
