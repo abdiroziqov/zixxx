@@ -60,10 +60,7 @@
         <h3 class="font-semibold tracking-[1.2px] leading-130 text-3xl dark:text-white text-dark mb-4  mf:mb-6">{{
           $t('factory_locations') }}</h3>
         <div class="grid grid-cols-3 gap-6">
-          <CommonCardFactoryLocation :card="{
-            description: 'Ташкент, проспект А. Навои, дом 3',
-            image: 'https://picsum.photos/100/100',
-          }" />
+          <CommonCardFactoryLocation :items="cards" />
         </div>
       </div>
 
@@ -82,7 +79,7 @@ const key = computed(() => import.meta.env.VITE_RECAPTCHA_KEY)
 const menu = computed(() => {
   return [
     {
-      title: 'Contact us',
+      title: t('contact_us'),
       link: '/contact',
     },
   ]
@@ -142,24 +139,18 @@ function expiredMethod() {
 }
 
 
-// const cards = [{
-//   name: 'Завод',
-//   description: 'Ташкент, проспект А. Навои, дом 3',
-//   image: 'https://picsum.photos/100/100',
-// },
-// {
-//   name: 'Завод',
-//   description: 'Ташкент, проспект А. Навои, дом 3',
-//   image: 'https://picsum.photos/100/100',
-// },
-// {
-//   name: 'Завод',
-//   description: 'Ташкент, проспект А. Навои, дом 3',
-//   image: 'https://picsum.photos/100/100',
-// },
-// {
-//   name: 'Завод',
-//   description: 'Ташкент, проспект А. Навои, дом 3',
-//   image: 'https://picsum.photos/100/100',
-// }];
+const cards = [
+    {
+  description: t('factory_location_one'),
+      image: '/images/img1.JPG',
+},
+{
+  description: t('factory_location_two'),
+  image: '/images/img2.JPG',
+},
+  {
+    description: t('factory_location_three'),
+    image: '/images/img3.JPG',
+  },
+];
 </script>
