@@ -117,7 +117,7 @@ const socialsData = {
   telegram: 'https://t.me/gips_mel',
   whatsapp: 'https://wa.me/998977079345',
   youtube: 'https://www.youtube.com/@zixx.uzbekistan',
-  link: 'https://www.youtube.com/@zixx.uzbekistan'
+  link: 'http://bio.link/zixx'
 }
 const contactInfo = [
   { type: 'phone', value: '+998 90-935-05-00' },
