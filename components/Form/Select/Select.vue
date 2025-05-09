@@ -100,12 +100,11 @@
 import { onClickOutside, useIntersectionObserver } from '@vueuse/core'
 import Highlighter from 'vue-highlight-words'
 
-import type { IRegions, TClassName } from '~/types'
 
 type TOption = string | number | { [key: string]: string | number }
 export interface Props {
   modelValue?: TOption
-  options: TOption[] | IRegions[]
+  options: TOption[] | any[]
   labelKey?: string
   valueKey?: string
   selectedOptionStyles?: string
@@ -114,10 +113,10 @@ export interface Props {
   searchText?: string
   loading?: boolean
   noDataText?: string
-  wrapperStyles?: TClassName
+  wrapperStyles?: any
   position?: 'top' | 'bottom'
   displayValueLabelClass?: boolean
-  placeholderClass?: TClassName
+  placeholderClass?: any
 }
 const props = withDefaults(defineProps<Props>(), {
   modelValue: undefined,
