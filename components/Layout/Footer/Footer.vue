@@ -15,7 +15,7 @@
       </div>
       <div class="md:flex grid  gap-4 md:gap-8">
         <div>
-          <p class="text-xl font-semibold font-white mb-3">{{ $t('social_media') }}</p>
+          <p class="text-xl font-semibold font-white mb-3 text-center">{{ $t('social_media') }}</p>
           <CommonSocials :socials="socialsData" />
         </div>
 

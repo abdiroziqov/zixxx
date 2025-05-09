@@ -22,7 +22,7 @@
       </div>
 
       <!-- Review Text -->
-      <p class="mt-3 text-gray dark:text-gray-300 ">
+      <p class="mt-3 text-gray dark:text-gray-300">
         {{ card?.review }}
       </p>
 

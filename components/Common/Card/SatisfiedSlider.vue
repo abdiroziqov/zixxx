@@ -14,6 +14,8 @@ import 'swiper/css'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 
+
+const { t } = useI18n()
 const settings = computed(() => ({
   loop: true,
   slidesPerView: 'auto',
@@ -29,10 +31,30 @@ const modules = [Autoplay];
 
 const category = [
   {
-    name: 'Равшан Турдиев',
-    description: 'Мастер putty',
-    image: 'https://via.placeholder.com/415x415',
-    review: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  }
+    name: t('ilhom_abdiroziqov'),
+    description: t('master_putty'),
+    image: '/images/1.jpg',
+    review: t('comment_one'),
+  },{
+    name: t('nasir_mahmudov'),
+    description: t('master'),
+    image: '/images/2.jpg',
+    review: t('comment_two'),
+  },{
+    name: t('rahim_berdiev'),
+    description: t('master_plaster'),
+    image: '/images/3.jpg',
+    review: t('comment_three'),
+  },{
+    name: t('elmurod_karimov'),
+    description: t('seller'),
+    image: '/images/4.jpg',
+    review: t('comment_four'),
+  },{
+    name: t('ravshan_turdiev'),
+    description: t('seller'),
+    image: '/images/5.jpg',
+    review: t('comment_five'),
+  },
 ]
 </script>
