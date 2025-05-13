@@ -25,7 +25,7 @@ defineProps<Props>()
         :loop="true"
     >
       <SwiperSlide v-for="(image, index) in images" :key="index">
-        <img :src="image" alt="Slide image" class="slide-image" />
+        <img :src="image" :alt="image" class="slide-image" />
       </SwiperSlide>
     </Swiper>
   </div>

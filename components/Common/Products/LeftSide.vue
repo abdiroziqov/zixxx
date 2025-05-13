@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div class="text-dark dark:text-white">
     <h3 class="text-5xl font-bold uppercase"> {{ data?.title }}</h3>
     <p class="py-4 text-lg">{{ data?.subtitle }}</p>
 

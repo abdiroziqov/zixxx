@@ -1,10 +1,17 @@
 <template>
-  <header :class="[
-  isHomeRoute
-    ? (isScrolled ? 'bg-black dark:bg-dark' : 'bg-transparent')
-    : (isScrolled ? 'bg-black dark:bg-dark' : 'bg-dark'),
-  isHomeRoute ? 'fixed !w-full' : 'relative'
-]" class="z-10 transition-all duration-300">
+  <header
+    :class="[
+      isHomeRoute
+        ? isScrolled
+          ? 'bg-black dark:bg-dark'
+          : 'bg-transparent'
+        : isScrolled
+        ? 'bg-black dark:bg-dark'
+        : 'bg-dark',
+      isHomeRoute ? 'fixed !w-full' : 'relative',
+    ]"
+    class="z-10 transition-all duration-300"
+  >
     <div class="container">
       <div class="flex justify-between items-center">
         <a href="/">
@@ -28,7 +35,10 @@
         </div>
         <div class="flex items-center gap-5">
           <LayoutHeaderThemeSwitcher @change-theme="updateTheme" />
-          <LayoutHeaderLangSwitcher :active="langSwitcherActive" @change="langSwitcherActive = $event" />
+          <LayoutHeaderLangSwitcher
+            :active="langSwitcherActive"
+            @change="langSwitcherActive = $event"
+          />
         </div>
       </div>
     </div>
@@ -36,52 +46,48 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n();
+const route = useRoute();
+const isScrolled = ref(false);
+const langSwitcherActive = ref(false);
 
-const { t } = useI18n()
-const route = useRoute()
-const isScrolled = ref(false)
-const langSwitcherActive = ref(false)
-
-const isHomeRoute = computed(() => route.path === '/')
-
+const isHomeRoute = computed(() => route.path === "/");
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50
-}
+  isScrolled.value = window.scrollY > 50;
+};
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
+  window.addEventListener("scroll", handleScroll);
+});
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
-
+  window.removeEventListener("scroll", handleScroll);
+});
 
 const quickLinks = [
   {
-    name: t('home'),
-    links: '/',
+    name: t("home"),
+    links: "/",
   },
   {
-    name: t('products'),
-    links: '/products',
+    name: t("products"),
+    links: "/products",
   },
   {
-    name: t('about_us'),
-    links: '/about-us',
+    name: t("about_us"),
+    links: "/about-us",
   },
   {
-    name: t('contact'),
-    links: '/contact',
+    name: t("contact"),
+    links: "/contact",
   },
-]
+];
 
-
-const currentTheme = ref('dark')
+const currentTheme = ref("dark");
 const updateTheme = (val: string) => {
-  currentTheme.value = val
-}
+  currentTheme.value = val;
+};
 </script>
 
 <style scoped>

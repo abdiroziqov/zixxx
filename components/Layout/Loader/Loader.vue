@@ -1,15 +1,29 @@
 <template>
   <transition name="fade">
-    <div v-if="loading"
-      class="background-shadow-loader w-full h-screen fixed inset-0 z-[99999] flex-center bg-[#3A3B3F]">
-      <div class="flex-col justify-between h-[100dvh] flex items-center relative">
-        <svg :class="{ '!opacity-100 translate-x-0': fullSvg }"
-          class="absolute top-[40%] opacity-0 transition-300 duration-300" version="1.0"
-          xmlns="http://www.w3.org/2000/svg" width="300px" height="200px" viewBox="0 0 2080.000000 2080.000000"
-          preserveAspectRatio="xMidYMid meet">
-
-          <g transform="translate(0.000000,2080.000000) scale(0.100000,-0.100000)" fill="red" stroke="red">
-            <path d="M9890 16339 c-2191 -98 -4256 -893 -6035 -2323 -308 -247 -672 -571
+    <div
+      v-if="loading"
+      class="background-shadow-loader w-full h-screen fixed inset-0 z-[99999] flex-center bg-[#3A3B3F]"
+    >
+      <div
+        class="flex-col justify-between h-[100dvh] flex items-center relative"
+      >
+        <svg
+          :class="{ '!opacity-100 translate-x-0': fullSvg }"
+          class="absolute top-[40%] opacity-0 transition-300 duration-300"
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          width="300px"
+          height="200px"
+          viewBox="0 0 2080.000000 2080.000000"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <g
+            transform="translate(0.000000,2080.000000) scale(0.100000,-0.100000)"
+            fill="red"
+            stroke="red"
+          >
+            <path
+              d="M9890 16339 c-2191 -98 -4256 -893 -6035 -2323 -308 -247 -672 -571
 -796 -707 -527 -578 -1020 -1277 -1414 -2004 -762 -1409 -1248 -3103 -1345
 -4695 -5 -91 -10 -174 -9 -185 0 -11 22 88 49 220 55 273 97 466 141 640 606
 2410 1858 4328 3677 5634 338 242 987 605 1482 829 1047 474 2142 745 3283
@@ -25,27 +39,39 @@
 46 -320 10 -210 28 -412 50 -537 l11 -63 42 0 41 0 18 93 c9 50 17 112 17 137
 0 25 5 89 12 143 14 111 4 227 -53 622 -304 2119 -1011 3896 -2124 5340 -696
 904 -1584 1690 -2565 2272 -558 331 -1257 660 -1739 818 -1397 457 -2806 664
--4131 604z" />
-            <path d="M2850 10845 l0 -395 1110 0 c611 0 1110 -3 1110 -7 0 -5 -513 -390
+-4131 604z"
+            />
+            <path
+              d="M2850 10845 l0 -395 1110 0 c611 0 1110 -3 1110 -7 0 -5 -513 -390
 -1140 -858 l-1140 -849 0 -398 0 -398 1890 0 1890 0 0 395 0 395 -1165 0
 c-694 0 -1165 4 -1165 9 0 5 511 391 1135 857 l1135 848 0 398 0 398 -1830 0
--1830 0 0 -395z" />
-            <path d="M7130 9590 l0 -1650 485 0 485 0 0 1650 0 1650 -485 0 -485 0 0
--1650z" />
-            <path d="M8651 11223 c8 -10 332 -378 722 -820 389 -441 707 -804 707 -807 0
+-1830 0 0 -395z"
+            />
+            <path
+              d="M7130 9590 l0 -1650 485 0 485 0 0 1650 0 1650 -485 0 -485 0 0
+-1650z"
+            />
+            <path
+              d="M8651 11223 c8 -10 332 -378 722 -820 389 -441 707 -804 707 -807 0
 -3 -349 -375 -775 -826 -426 -451 -775 -822 -775 -825 0 -3 294 -5 653 -5
 l652 0 500 571 c275 313 511 583 525 600 l26 30 516 -588 c284 -324 523 -594
 531 -601 11 -9 168 -12 664 -10 l650 3 -778 824 c-445 470 -775 829 -772 835
 4 6 328 374 720 818 392 444 713 810 713 813 0 3 -282 5 -627 5 l-628 0 -494
 -576 -495 -576 -20 24 c-12 13 -234 272 -495 576 l-474 552 -630 0 c-595 0
--629 -1 -616 -17z" />
-            <path d="M12532 9543 c20 -21 358 -391 752 -822 l717 -785 -94 -95 c-231 -236
+-629 -1 -616 -17z"
+            />
+            <path
+              d="M12532 9543 c20 -21 358 -391 752 -822 l717 -785 -94 -95 c-231 -236
 -1445 -1480 -1481 -1518 l-40 -43 679 1 680 0 545 600 c426 470 546 598 555
 587 5 -8 250 -278 544 -601 l533 -587 681 0 680 0 -189 193 c-760 772 -1419
 1452 -1419 1463 0 7 322 365 715 795 393 430 728 797 743 815 l28 34 -653 0
 -653 0 -485 -545 c-267 -300 -497 -560 -511 -577 l-26 -31 -513 577 -513 576
--655 0 -656 0 36 -37z" fill="white" stroke="white" />
-            <path d="M2750 6845 l0 -565 4578 0 4577 0 565 565 565 565 -5143 0 -5142 0 0
+-655 0 -656 0 36 -37z"
+              fill="white"
+              stroke="white"
+            />
+            <path
+              d="M2750 6845 l0 -565 4578 0 4577 0 565 565 565 565 -5143 0 -5142 0 0
 -565z m461 212 c31 -21 78 -88 79 -113 0 -12 -69 -36 -82 -28 -4 3 -8 12 -8
 20 0 25 -38 54 -73 54 -68 0 -103 -72 -94 -192 5 -73 24 -112 62 -130 41 -18
 74 -2 96 47 11 25 23 45 26 45 19 0 73 -26 73 -35 -1 -26 -40 -93 -69 -118
@@ -108,18 +134,26 @@ l-42 3 -31 165 -30 165 -3 -167 -2 -168 -40 0 -40 0 0 243 c0 134 3 247 7 250
 -34 -56 7 -95 39 -127 105 -24 50 -28 68 -28 147 0 76 4 99 26 146 24 51 59
 87 99 102 38 14 108 6 141 -16z m217 -137 l4 -155 77 155 77 155 40 0 39 0 3
 -247 2 -248 -40 0 -40 0 -1 153 0 152 -77 -152 -77 -153 -42 0 -43 0 0 243 c0
-134 3 247 7 251 4 4 21 6 38 4 l30 -3 3 -155z" />
-            <path d="M5780 6920 l0 -70 41 0 c52 0 75 13 83 46 15 60 -21 94 -100 94 -23
-0 -24 -3 -24 -70z" />
-            <path d="M6170 6962 c-65 -66 -48 -257 27 -291 100 -46 174 90 133 241 -22 77
--106 103 -160 50z" />
-            <path d="M8050 6730 l0 -60 65 0 c70 0 85 11 85 64 0 41 -25 56 -91 56 l-59 0
-0 -60z" />
-            <path d="M8840 6730 l0 -60 65 0 c70 0 85 11 85 64 0 41 -25 56 -91 56 l-59 0
-0 -60z" />
+134 3 247 7 251 4 4 21 6 38 4 l30 -3 3 -155z"
+            />
+            <path
+              d="M5780 6920 l0 -70 41 0 c52 0 75 13 83 46 15 60 -21 94 -100 94 -23
+0 -24 -3 -24 -70z"
+            />
+            <path
+              d="M6170 6962 c-65 -66 -48 -257 27 -291 100 -46 174 90 133 241 -22 77
+-106 103 -160 50z"
+            />
+            <path
+              d="M8050 6730 l0 -60 65 0 c70 0 85 11 85 64 0 41 -25 56 -91 56 l-59 0
+0 -60z"
+            />
+            <path
+              d="M8840 6730 l0 -60 65 0 c70 0 85 11 85 64 0 41 -25 56 -91 56 l-59 0
+0 -60z"
+            />
           </g>
         </svg>
-
 
         <div class="loader absolute bottom-[8%]" />
       </div>
@@ -128,47 +162,46 @@ l-42 3 -31 165 -30 165 -3 -167 -2 -168 -40 0 -40 0 0 243 c0 134 3 247 7 250
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
-
+import { onMounted } from "vue";
 
 interface Props {
-  customLoading?: boolean
+  customLoading?: boolean;
 }
 const props = withDefaults(defineProps<Props>(), {
   customLoading: undefined,
-})
+});
 
-const fullSvg = ref(false)
-const loading = ref(true)
+const fullSvg = ref(false);
+const loading = ref(true);
 
 onMounted(() => {
-  const body = document.body
-  body.style.overflow = 'hidden'
+  const body = document.body;
+  body.style.overflow = "hidden";
   setTimeout(() => {
-    fullSvg.value = true
-  }, 1000)
+    fullSvg.value = true;
+  }, 1000);
 
   setTimeout(() => {
-    fullSvg.value = true
-  }, 1000)
+    fullSvg.value = true;
+  }, 1000);
 
   setTimeout(() => {
-    body.style.overflow = ''
-    loading.value = false
-  }, 2000)
-})
+    body.style.overflow = "";
+    loading.value = false;
+  }, 2000);
+});
 
 watch(
   () => props.customLoading,
   (newValue) => {
-    if (typeof newValue !== 'undefined') {
-      loading.value = newValue
+    if (typeof newValue !== "undefined") {
+      loading.value = newValue;
     }
   },
   {
     immediate: true,
   }
-)
+);
 </script>
 
 <style scoped>

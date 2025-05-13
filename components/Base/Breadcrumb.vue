@@ -8,7 +8,7 @@
         class="flex-y-center gap-2 text-dark dark:text-white cursor-pointer leading-130 text-sm font-semibold  transition-300 hover:text-orange group"
       >
         <svg
-            class="w-6 h-6 stroke-current text-orange dark:text-white"
+            class="w-6 h-6 stroke-current text-orange dark:!text-white"
           width="24"
           height="25"
           viewBox="0 0 24 25"
@@ -37,7 +37,7 @@
             'pointer-events-none !text-dark dark:!text-white':
               index === breadcrumb?.length - 1,
           }"
-          class="transition-300 flex cursor-pointer items-center leading-130 text-sm font-semibold min-w-max group-last:min-w-[100px] sm:group-last:min-w-[200px] breadcrumb-menu line-clamp-1 whitespace-nowrap hover:text-primary"
+          class="transition-300 flex cursor-pointer text-dark dark:text-white items-center leading-130 text-sm font-semibold min-w-max group-last:min-w-[100px] sm:group-last:min-w-[200px] breadcrumb-menu line-clamp-1 whitespace-nowrap hover:text-primary"
         >
           {{ item?.title }}
         </NuxtLink>

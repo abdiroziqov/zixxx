@@ -1,39 +1,43 @@
 <template>
-<div class="bg-gray">
-  <div class="relative container py-6">
-    <BaseBreadcrumb :breadcrumb="menu" />
-    <div class="flex gap-9  items-center justify-center mt-10">
-      <CommonProductsSwiperProduct :images="image" />
-      <CommonProductsLeftSide :data="data" />
+  <div class="bg-white dark:!bg-dark pb-16">
+    <div class="relative container py-6 pb-16">
+      <BaseBreadcrumb :breadcrumb="menu" />
+      <div class="flex gap-9 mt-10">
+        <CommonProductsSwiperProduct :images="image" />
+        <CommonProductsLeftSide :data="data" />
+      </div>
     </div>
   </div>
-</div>
 </template>
 <script setup lang="ts">
-
 const menu = computed(() => {
   return [
     {
-      title: 'Products',
-      link: '/products',
+      title: "Products",
+      link: "/products",
     },
     {
-      title: 'Products-name',
-      link: '',
+      title: "Products-name",
+      link: "",
     },
-  ]
-})
+  ];
+});
 
 const image = [
-  "https://picsum.photos/500/500",
-  "https://picsum.photos/500/500",
-  "https://picsum.photos/500/500"
+    "/temp/img1.jpg",
+    "/temp/img2.jpg",
+    "/temp/img3.jpg",
 ];
 
-
 const data = {
-  title: 'Product name',
-  subtitle: 'Product subtitle',
-  properties: ['property 1', 'property 2', 'property 3']
-}
+  title: "Церезит CM 11 PRO",
+  subtitle:
+    "Клей для керамогранита и керамической плитки для пола и стен, класс C1 T",
+  properties: [
+    "водо- и морозостойкий;",
+    "подходит для влажных зон;",
+    "пригоден для внутренних и наружных работ;",
+    "экологически безопасен.",
+  ],
+};
 </script>
