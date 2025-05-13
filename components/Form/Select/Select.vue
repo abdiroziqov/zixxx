@@ -3,7 +3,7 @@
     <!--  SELECTED OPTION  -->
     <div
       :class="selectedOptionStyles"
-      class="bg-white rounded-lg px-3 py-2.5 cursor-pointer flex items-center justify-between"
+      class="bg-white rounded-lg px-3 py-2.5 cursor-pointer flex items-center justify-between border border-orange"
       @click="toggleSelect(!showOptions)"
     >
       <slot name="selectedOption" :value="value">
@@ -37,8 +37,8 @@
         </div>
         <span class="transition-300" :class="{ 'rotate-180': showOptions }">
           <slot name="chevron">
-            <i-chevron-right
-              class="transition-all duration-200 rotate-90 inline-block"
+            <i
+              class="icon-chevran transition-all duration-200 inline-block text-xs"
             />
           </slot>
         </span>
@@ -49,7 +49,7 @@
       <div
         v-if="showOptions"
         :key="showOptions"
-        class="absolute w-full bg-white border border-white-100 rounded z-30 overflow-x-hidden max-h-[220px] scroll-style"
+        class="absolute w-full bg-white border border-orange-100 rounded z-30 overflow-x-hidden max-h-[220px] scroll-style"
         :class="
           position === 'top'
             ? 'bottom-full -translate-y-0'
@@ -61,7 +61,7 @@
             <div
               v-for="(option, idx) in options"
               :key="idx"
-              class="transition-all duration-200 px-3 py-2.5 hover:bg-gray-300 cursor-pointer flex-center-between border-b border-white-100 last:border-[0px] group"
+              class="transition-all duration-200 px-3 py-2.5 hover:bg-gray-300 cursor-pointer flex-center-between border-b border-orange-100 last:border-[0px] group"
               @click="onSelect(option)"
             >
               <slot name="option" :option="option" :index="idx">

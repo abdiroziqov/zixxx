@@ -1,14 +1,14 @@
 <template>
-  <div class="border shadow rounded-lg overflow-hidden w-max">
-    <div class="w-[200px] h-[200px]">
-    <img class="w-full h-full object-contain" src="/images/1.jpg" alt="image">
+  <NuxtLink to="/products/1" class="border shadow-lg rounded-lg overflow-hidden">
+    <div class="w-[300px] h-[250px]">
+    <img class="w-full h-full" src="https://picsum.photos/300/300" alt="image">
     </div>
     <div class="p-2">
       <h3 class="text-lg font-semibold text-gray-800 mt-2">Product Name</h3>
       <p class="text-gray-600 text-sm mt-1">Product description goes here. It should be brief and informative.</p>
     </div>
 
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">

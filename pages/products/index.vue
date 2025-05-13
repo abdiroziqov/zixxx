@@ -1,30 +1,38 @@
 <template>
-  <div class="container min-h-screen flex items-center justify-center text-center">
-    <div>
-      <h1 class="text-5xl font-bold mb-4 text-dark">🚧 Coming Soon</h1>
-      <p class="text-lg text-dark">We're working hard to bring you something awesome. Stay tuned!</p>
-    </div>
+  <section class="dark:bg-white bg-dark">
+    <div class="container">
+      <div class="flex justify-between items-center">
+        <h3 class="font-semibold text-3xl leading-130 text-white dark:text-dark my-7">{{ $t("all_products") }}</h3>
+        <FormSelect
+            v-model="form.values.region"
+            :options="regions"
+            label-key="title"
+            value-key="id"
+            selected-option-styles="text-red-500"
+            :placeholder="t('all_products')" />
+      </div>
+      <div class="grid grid-cols-4 gap-5 pb-12">
 
-    <!--
-    <div class="flex justify-between items-center">
-      <h3 class="font-semibold text-3xl leading-130 dark:text-white">{{ $t('all_products') }}</h3>
-      <FormSelect
-        v-model="form.values.region"
-        :options="regions"
-        label-key="title"
-        value-key="id"
-        selected-option-styles="text-red-500"
-        :placeholder="$t('enter_region')" />
+        <ProductCard
+            v-for="n in 12"
+            :key="n"
+        />
+      </div>
+
     </div>
-    -->
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
+import ProductCard from "~/components/Common/Products/ProductCard.vue";
+
+const { t } = useI18n()
+
+
 const regions = [
-  { id: 1, title: 'Region 1' },
-  { id: 2, title: 'Region 2' },
-  { id: 3, title: 'Region 3' }
+  { id: 1, title: 'all_products' },
+  { id: 2, title: 'zixx' },
+  { id: 3, title: 'kabaya' },
 ]
 
 const form = useForm({
