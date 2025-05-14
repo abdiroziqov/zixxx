@@ -1,10 +1,10 @@
 <template>
   <div class="bg-white dark:!bg-dark pb-16">
-    <div class="relative container py-6 pb-16">
+    <div class="relative container py-6">
       <BaseBreadcrumb :breadcrumb="menu" />
-      <div class="flex gap-9 mt-10">
+      <div class="md:flex gap-9 mt-10">
         <CommonProductsSwiperProduct :images="image" />
-        <CommonProductsLeftSide :data="data" />
+        <CommonProductsLeftSide class="mt-5 md:mt-0" :data="data" />
       </div>
     </div>
   </div>

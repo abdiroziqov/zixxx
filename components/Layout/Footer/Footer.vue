@@ -120,15 +120,15 @@ const quickLinks = [
     links: "/",
   },
   {
-    name: "Products",
+    name: t("products"),
     links: "/products",
   },
   {
-    name: "About Us",
+    name: t("about_us"),
     links: "/about-us",
   },
   {
-    name: "Contact",
+    name: t("contact"),
     links: "/contact",
   },
 ];

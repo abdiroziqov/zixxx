@@ -38,10 +38,12 @@
           <LayoutHeaderLangSwitcher
             :active="langSwitcherActive"
             @change="langSwitcherActive = $event"
+            variant="default"
           />
         </div>
       </div>
     </div>
+    <LayoutHeaderMobileHeader class="hidden"  />
   </header>
 </template>
 

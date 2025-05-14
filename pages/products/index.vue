@@ -16,7 +16,7 @@
           :placeholder="t('all_products')"
         />
       </div>
-      <div class="grid grid-cols-4 gap-5 pb-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
         <CommonProductsProductCard />
       </div>
     </div>
