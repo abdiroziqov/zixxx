@@ -10,11 +10,11 @@
         <span :key="showMenu" class="cursor-pointer" @click="toggleMenu">
           <i
               v-if="!showMenu"
-              class="duration-200 icon-menu text-2.5xl"
+              class="duration-200 icon-menu text-2.5xl dark:text-white text-dark"
           />
           <i
               v-else
-              class="duration-200 icon-close text-2.5xl"
+              class="duration-200 icon-close text-2.5xl dark:text-white text-dark"
           />
         </span>
       </transition>

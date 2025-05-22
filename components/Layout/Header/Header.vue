@@ -43,7 +43,7 @@
         </div>
       </div>
     </div>
-    <LayoutHeaderMobileHeader class="hidden"  />
+<!--    <LayoutHeaderMobileHeader />-->
   </header>
 </template>
 

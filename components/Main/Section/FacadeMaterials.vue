@@ -1,7 +1,7 @@
 <template>
   <div class="dark:bg-gray bg-white py-7 md:py-16 overflow-hidden">
     <div class="container lg:flex justify-between gap-6 md:items-center">
-      <div class="w-full md:w-[580px] h-[360px]">
+      <div class="w-full md:w-[580px] h-[240px] md:h-[360px]">
         <img
           class="w-full h-full rounded-[18px]"
           src="/images/dom.png"

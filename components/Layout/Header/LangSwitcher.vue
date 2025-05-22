@@ -33,17 +33,17 @@
           </g>
         </svg>
         <span
-          class="hidden sm:inline-block ml-2 mr-1 text-sm font-semibold leading-normal cursor-pointer"
+          class="inline-block ml-2 mr-1 text-sm font-semibold leading-normal cursor-pointer"
           >{{ currentLanguage?.name }}</span
         >
-        <span
-          class="inline-block sm:hidden ml-2 mr-1 text-sm font-semibold leading-normal cursor-pointer"
-          >{{
-            currentLanguage?.name.includes("'")
-              ? currentLanguage?.name?.slice(0, 3)
-              : currentLanguage?.name?.slice(0, 2)
-          }}</span
-        >
+<!--        <span-->
+<!--          class="inline-block sm:hidden ml-2 mr-1 text-sm font-semibold leading-normal cursor-pointer"-->
+<!--          >{{-->
+<!--            currentLanguage?.name.includes("'")-->
+<!--              ? currentLanguage?.name?.slice(0, 3)-->
+<!--              : currentLanguage?.name?.slice(0, 2)-->
+<!--          }}</span-->
+<!--        >-->
       </div>
     </template>
     <template #body>
