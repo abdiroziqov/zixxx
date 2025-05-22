@@ -78,3 +78,7 @@ img {
 .leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
     display: none;
 }
+.router-link-active,
+.router-link-exact-active {
+    color: #FF662D;
+}
