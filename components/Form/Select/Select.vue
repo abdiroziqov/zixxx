@@ -3,7 +3,7 @@
     <!--  SELECTED OPTION  -->
     <div
       :class="selectedOptionStyles"
-      class="bg-white rounded-lg px-3 py-2.5 cursor-pointer flex items-center justify-between border border-orange"
+      class="bg-white dark:bg-dark rounded-lg px-3 py-2.5 cursor-pointer flex items-center justify-between border border-orange"
       @click="toggleSelect(!showOptions)"
     >
       <slot name="selectedOption" :value="value">
@@ -11,7 +11,7 @@
           <slot name="prefix" />
           <div
             v-if="!value"
-            class="text-gray text-sm leading-130 truncate"
+            class="text-gray dark:text-white text-sm leading-130 truncate"
             :class="placeholderClass"
           >
             {{ placeholder }}
