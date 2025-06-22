@@ -12,7 +12,7 @@
     ]"
     class="z-10 transition-all duration-300"
   >
-    <div class="container">
+    <div class="container hidden lg:block">
       <div class="flex justify-between items-center">
         <a href="/">
           <img class="hidden dark:block" src="/logo.svg" alt="logo" />
@@ -43,7 +43,7 @@
         </div>
       </div>
     </div>
-<!--    <LayoutHeaderMobileHeader />-->
+    <LayoutHeaderMobileHeader class="lg:hidden" />
   </header>
 </template>
 

@@ -10,7 +10,8 @@
     @toggle="handleDropdownToggle"
   >
     <template #head>
-      <div class="flex items-center text-white">
+      <div class="flex items-center text-white"
+       :class="mainColor">
         <svg
           class="hidden sm:block"
           xmlns="http://www.w3.org/2000/svg"
@@ -36,14 +37,6 @@
           class="inline-block ml-2 mr-1 text-sm font-semibold leading-normal cursor-pointer"
           >{{ currentLanguage?.name }}</span
         >
-<!--        <span-->
-<!--          class="inline-block sm:hidden ml-2 mr-1 text-sm font-semibold leading-normal cursor-pointer"-->
-<!--          >{{-->
-<!--            currentLanguage?.name.includes("'")-->
-<!--              ? currentLanguage?.name?.slice(0, 3)-->
-<!--              : currentLanguage?.name?.slice(0, 2)-->
-<!--          }}</span-->
-<!--        >-->
       </div>
     </template>
     <template #body>
@@ -90,6 +83,7 @@ interface Props {
   variant: "default" | "transparent";
   isTransparent?: boolean;
   headClass?: any;
+  mainColor?: string;
 }
 
 defineProps<Props>();

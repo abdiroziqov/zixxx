@@ -1,6 +1,6 @@
 <template>
   <section class="relative min-h-screen overflow-x-hidden flex items-center">
-    <Swiper v-bind="settings" :modules="modules" @slide-change="onSlideChange">
+    <Swiper v-bind="settings" :modules="modules" @slide-change="onSlideChange" >
       <SwiperSlide>
         <img
           class="!w-full !h-full object-cover pointer-events-none hidden dark:block"

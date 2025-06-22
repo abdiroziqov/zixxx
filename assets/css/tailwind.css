@@ -82,3 +82,11 @@ img {
 .router-link-exact-active {
     color: #FF662D;
 }
+.hero-shadow {
+    -webkit-backdrop-filter: blur(26px);
+    backdrop-filter: blur(26px);
+    background: #ffffff1a;
+    box-shadow: 0 4px 64px #00000014;
+    position: relative;
+    z-index: 10
+}
