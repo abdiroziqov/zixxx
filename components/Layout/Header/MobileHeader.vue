@@ -36,7 +36,7 @@
     >
 
 
-      <ul class="flex-col gap-4 text-white divide-y divide-dark dark:divide-white divide-solid" >
+      <ul class="flex-col gap-4 text-white divide-y divide-white divide-solid" >
         <li
             v-for="(link, index) in quickLinks"
             :key="'quick-' + index"
@@ -44,7 +44,7 @@
         >
           <NuxtLink
               :to="link?.links"
-              class="hover:text-orange text-dark dark:text-white duration-300 leading-[150%] !font-semibold  text-base hover:text-red my-3"
+              class="hover:text-orange text-white duration-300 leading-[150%] !font-semibold  text-base hover:text-red my-3"
           >{{ link?.name }}</NuxtLink
           >
         </li>
