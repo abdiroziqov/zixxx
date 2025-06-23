@@ -38,6 +38,7 @@
 
       <ul class="flex-col gap-4 text-white divide-y divide-white divide-solid" >
         <li
+            @click="toggleMenu"
             v-for="(link, index) in quickLinks"
             :key="'quick-' + index"
             class="my-2"
@@ -54,10 +55,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue'
-
-
-
 const { t } = useI18n()
 const showMenu = ref(false)
 const langSwitcherActive = ref(false)

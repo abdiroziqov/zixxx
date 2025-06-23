@@ -16,86 +16,38 @@
         </div>
       </div>
     </div>
-    <div class="container my-4 mt-10">
+    <div v-if="getFaqs?.length" class="container my-4 mt-10">
       <h3
         class="text-4xl font-semibold leading-130 tracking-[1.2px] text-dark dark:text-white"
       >
         {{ $t("faq") }}
       </h3>
-      <CommonFaq class="" :faq="faq" />
+      <CommonFaq class="" :faq="getFaqs?.length" />
+
+      <pre>{{getFaqs}}</pre>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n();
-const faq = [
-  {
-    id: 1,
-    question: t("faq_one"),
-    answer: t("faq_one_answer"),
-  },
-  {
-    id: 2,
-    question: t("faq_two"),
-    answer: t("faq_two_answer"),
-  },
-  {
-    id: 3,
-    question: t("faq_three"),
-    answer: t("faq_three_answer"),
-  },
-  {
-    id: 4,
-    question: t("faq_four"),
-    answer: t("faq_four_answer"),
-  },
-  {
-    id: 5,
-    question: t("faq_five"),
-    answer: t("faq_five_answer"),
-  },
-  {
-    id: 6,
-    question: t("faq_six"),
-    answer: t("faq_six_answer"),
-  },
-  {
-    id: 7,
-    question: t("faq_seven"),
-    answer: t("faq_seven_answer"),
-  },
-  {
-    id: 8,
-    question: t("faq_eight"),
-    answer: t("faq_eight_answer"),
-  },
-  {
-    id: 9,
-    question: t("faq_nine"),
-    answer: t("faq_nine_answer"),
-  },
-  {
-    id: 10,
-    question: t("faq_ten"),
-    answer: t("faq_ten_answer"),
-  },
-  {
-    id: 11,
-    question: t("faq_eleven"),
-    answer: t("faq_eleven_answer"),
-  },
-  {
-    id: 12,
-    question: t("faq_twelve"),
-    answer: t("faq_twelve_answer"),
-  },
-  {
-    id: 13,
-    question: t("faq_thirteen"),
-    answer: t("faq_thirteen_answer"),
-  },
-];
+const products = ref<any>([])
+
+
+function getFaqs() {
+  const { locale } = useI18n(); // get current locale
+
+  useApi()
+      .$get(`/faq/${locale.value}`)
+      .then((res) => {
+        products.value = res;
+      })
+      .catch((err) => {
+        console.error("Error fetching products:", err);
+      });
+}
+
+
+getFaqs()
 </script>
 
 <style>

@@ -1,5 +1,5 @@
 <template>
-  <div ref="select" class="relative" :class="wrapperStyles">
+  <div ref="select" class="relative !w-[140px]" :class="wrapperStyles">
     <!--  SELECTED OPTION  -->
     <div
       :class="selectedOptionStyles"
@@ -20,14 +20,14 @@
             <div>
               <div
                 v-if="value?.status"
-                class="text-dark text-sm leading-130"
+                class="text-dark dark:text-white text-sm leading-130"
                 :class="displayValueLabelClass"
               >
                 {{ $t(value[labelKey]) }}
               </div>
               <div
                 v-else
-                class="text-dark text-sm leading-130"
+                class="text-dark dark:text-white text-sm leading-130"
                 :class="displayValueLabelClass"
               >
                 {{ value[labelKey] || value }}

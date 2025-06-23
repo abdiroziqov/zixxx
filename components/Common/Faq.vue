@@ -35,14 +35,8 @@ import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTrans
 import { ref } from 'vue'
 const selectedItem = ref(0)
 
-interface IFaq {
-  id: number
-  question: string
-  answer: string
-}
-
 interface Props {
-  faq: IFaq[]
+  faq: string | number
   questionClass?: string
   answerClass?: string
 }
