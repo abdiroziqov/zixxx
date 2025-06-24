@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white dark:!bg-dark pb-16">
-<!--    <pre class="text-white">{{productsSingle}}</pre>-->
+    <!--    <pre class="text-white">{{productsSingle}}</pre>-->
     <div class="relative container py-6">
       <BaseBreadcrumb :breadcrumb="menu" />
       <div class="md:flex gap-9 mt-10">
@@ -12,24 +12,22 @@
 </template>
 <script setup lang="ts">
 const route = useRoute();
-const productsSingle = ref<any>([])
-
+const productsSingle = ref<any>([]);
 
 function getProductSingle() {
   const { locale } = useI18n();
 
   useApi()
-      .$get(`/product/${route.params.id}/${locale.value}`) // use the locale in the API path
-      .then((res) => {
-        productsSingle.value = res;
-      })
-      .catch((err) => {
-        console.error("Error fetching products:", err);
-      });
+    .$get(`/product/${route.params.id}/${locale.value}`) // use the locale in the API path
+    .then((res) => {
+      productsSingle.value = res;
+    })
+    .catch((err) => {
+      console.error("Error fetching products:", err);
+    });
 }
 
-
-getProductSingle()
+getProductSingle();
 const menu = computed(() => {
   return [
     {
@@ -43,11 +41,7 @@ const menu = computed(() => {
   ];
 });
 
-const image = [
-    "/temp/img1.jpg",
-    "/temp/img2.jpg",
-    "/temp/img3.jpg",
-];
+const image = ["/temp/img1.jpg", "/temp/img2.jpg", "/temp/img3.jpg"];
 
 const data = {
   title: "Церезит CM 11 PRO",
