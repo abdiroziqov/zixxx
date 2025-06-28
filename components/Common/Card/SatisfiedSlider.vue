@@ -1,6 +1,6 @@
 <template>
   <ClientOnly>
-    <Swiper :space-between="20" v-bind="settings">
+    <Swiper class="!w-[350px] md:!w-[415px]" :space-between="20" v-bind="settings">
       <SwiperSlide  v-for="(item, index) in category" :key="index" class="!w-[350px] md:!w-[415px]">
         <CommonCardSatisfiedSliderCard :card="item" />
       </SwiperSlide>
