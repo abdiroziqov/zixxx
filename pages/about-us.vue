@@ -16,15 +16,15 @@
         </div>
       </div>
     </div>
-    <div v-if="getFaqs?.length" class="container my-4 mt-10">
+    <div  class="container my-4 mt-10">
       <h3
         class="text-4xl font-semibold leading-130 tracking-[1.2px] text-dark dark:text-white"
       >
         {{ $t("faq") }}
       </h3>
-      <CommonFaq class="" :faq="getFaqs?.length" />
+      <CommonFaq class="" :faq="products" />
 
-      <pre>{{getFaqs}}</pre>
+<!--      <pre class="text-white">{{products}}</pre>-->
     </div>
   </main>
 </template>

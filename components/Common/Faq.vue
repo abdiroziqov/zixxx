@@ -1,29 +1,33 @@
 <template>
   <div class="grid items-start gap-x-4">
     <div
-      v-for="(item, index) in faq"
-      :key="index"
-      class="group transition-300 border-b last:border-b-[0px] border-white-400"
+        v-for="(item, index) in faq"
+        :key="index"
+        class="group transition-300 border-b last:border-b-[0px] border-white-400"
     >
       <div
-        class="flex items-center justify-between cursor-pointer transition-300 rounded-2xl py-4"
-        :class="[selectedItem === item.id ? '' : '']"
-        @click="openItem(item.id)"
+          class="flex items-center justify-between cursor-pointer transition-300 rounded-2xl py-4"
+          :class="[selectedItem === item.id ? '' : '']"
+          @click="openItem(item.id)"
       >
         <h4
-          class="font-medium text-lg text-dark dark:text-white !leading-130 transition-colors duration-300 group-hover:text-orange"
+            class="font-medium text-lg text-dark dark:text-white !leading-130 transition-colors duration-300 group-hover:text-orange"
         >
-          {{ item.question }}
+          {{ getTranslation(item, 'question') }}
         </h4>
         <div
-          class="plusminus flex-shrink-0 ml-1"
-          :class="{ active: selectedItem === item.id }"
+            class="plusminus flex-shrink-0 ml-1"
+            :class="{ active: selectedItem === item.id }"
         ></div>
       </div>
+
       <CollapseTransition>
         <div v-if="selectedItem === item.id" class="pb-4">
-          <p class="!leading-130 text-dark dark:text-white opacity-85" :class="answerClass">
-            {{ item.answer }}
+          <p
+              class="!leading-130 text-dark dark:text-white opacity-85"
+              :class="answerClass"
+          >
+            {{ getTranslation(item, 'answer') }}
           </p>
         </div>
       </CollapseTransition>
@@ -32,11 +36,24 @@
 </template>
 <script setup lang="ts">
 import CollapseTransition from '@ivanv/vue-collapse-transition/src/CollapseTransition.vue'
-import { ref } from 'vue'
 const selectedItem = ref(0)
 
+interface Translation {
+  question?: string
+  answer?: string
+}
+
+interface FaqItem {
+  id: number
+  translations: {
+    en?: Translation
+    uz?: Translation
+    ru?: Translation
+  }
+}
+
 interface Props {
-  faq: string | number
+  faq: FaqItem[]
   questionClass?: string
   answerClass?: string
 }
@@ -44,13 +61,19 @@ interface Props {
 defineProps<Props>()
 
 const openItem = (id: number) => {
-  if (selectedItem.value === id) {
-    selectedItem.value = 0
-    return
-  }
-  selectedItem.value = id
+  selectedItem.value = selectedItem.value === id ? 0 : id
+}
+
+const getTranslation = (item: FaqItem, key: 'question' | 'answer'): string => {
+  return (
+      item.translations?.en?.[key] ||
+      item.translations?.uz?.[key] ||
+      item.translations?.ru?.[key] ||
+      ''
+  )
 }
 </script>
+
 
 <style scoped>
 .plusminus {
