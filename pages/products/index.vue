@@ -1,6 +1,5 @@
 <template>
   <section class="bg-white dark:!bg-dark pb-16">
-    <!--    <pre class="text-white">products:{{products}}</pre>-->
     <div class="container">
       <div class="flex justify-between items-center">
         <h3
@@ -18,7 +17,7 @@
         />
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-        <CommonProductsProductCard />
+        <CommonProductsProductCard :products />
       </div>
     </div>
   </section>
@@ -46,7 +45,7 @@ const products = ref<any>([]);
 function getFaqs() {
   const { locale } = useI18n(); // get current locale
   useApi()
-    .$get(`/product/1/${locale.value}`) // use the locale in the API path
+    .$get(`/products/${locale.value}`) // use the locale in the API path
     .then((res) => {
       products.value = res;
     })

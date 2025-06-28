@@ -1,11 +1,10 @@
 <template>
   <div class="bg-white dark:!bg-dark pb-16">
-    <!--    <pre class="text-white">{{productsSingle}}</pre>-->
     <div class="relative container py-6">
       <BaseBreadcrumb :breadcrumb="menu" />
       <div class="md:flex gap-9 mt-10">
         <CommonProductsSwiperProduct :images="image" />
-        <CommonProductsLeftSide class="mt-5 md:mt-0" :data="data" />
+        <CommonProductsLeftSide class="mt-5 md:mt-0" :data="productsSingle" />
       </div>
     </div>
   </div>
@@ -18,7 +17,7 @@ function getProductSingle() {
   const { locale } = useI18n();
 
   useApi()
-    .$get(`/product/${route.params.id}/${locale.value}`) // use the locale in the API path
+    .$get(`/product/${route.params.id}`) // use the locale in the API path
     .then((res) => {
       productsSingle.value = res;
     })
@@ -35,7 +34,7 @@ const menu = computed(() => {
       link: "/products",
     },
     {
-      title: "Products-name",
+      title: productsSingle.value.name,
       link: "",
     },
   ];
@@ -43,15 +42,15 @@ const menu = computed(() => {
 
 const image = ["/temp/img1.jpg", "/temp/img2.jpg", "/temp/img3.jpg"];
 
-const data = {
-  title: "Церезит CM 11 PRO",
-  subtitle:
-    "Клей для керамогранита и керамической плитки для пола и стен, класс C1 T",
-  properties: [
-    "водо- и морозостойкий;",
-    "подходит для влажных зон;",
-    "пригоден для внутренних и наружных работ;",
-    "экологически безопасен.",
-  ],
-};
+// const data = {
+//   title: "Церезит CM 11 PRO",
+//   subtitle:
+//     "Клей для керамогранита и керамической плитки для пола и стен, класс C1 T",
+//   properties: [
+//     "водо- и морозостойкий;",
+//     "подходит для влажных зон;",
+//     "пригоден для внутренних и наружных работ;",
+//     "экологически безопасен.",
+//   ],
+// };
 </script>

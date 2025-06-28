@@ -24,7 +24,6 @@
       </h3>
       <CommonFaq class="" :faq="products" />
 
-<!--      <pre class="text-white">{{products}}</pre>-->
     </div>
   </main>
 </template>
