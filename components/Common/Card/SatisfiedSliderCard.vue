@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center">
-    <div class="relative p-6 bg-white dark:bg-[#464646] rounded-2xl dark:shadow-lg text-white">
+    <div class="relative p-2 md:p-6 bg-white dark:bg-[#464646] rounded-2xl dark:shadow-lg text-white">
       <!-- Profile Section -->
       <div class="flex items-center gap-4">
         <img
@@ -22,7 +22,7 @@
       </div>
 
       <!-- Review Text -->
-      <p class="mt-3 text-gray dark:text-gray-300">
+      <p class="mt-3 text-gray dark:text-gray-300 text-sm md:text-base">
         {{ card?.review }}
       </p>
 
