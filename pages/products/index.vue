@@ -14,6 +14,7 @@
             :placeholder="t('all_products')"
         />
       </div>
+        <pre>{{filteredProducts}}</pre>
 
       <!-- Loader -->
       <div v-if="loading" class="flex justify-center py-20">
@@ -27,10 +28,12 @@
         </p>
       </div>
 
+
       <!-- Product Grid -->
       <div v-else class="grid grid-cols-2 md:grid-cols-4 gap-5">
         <CommonProductsProductCard :products="filteredProducts" />
       </div>
+
     </div>
   </section>
 </template>
