@@ -14,7 +14,7 @@
             :placeholder="t('all_products')"
         />
       </div>
-       asda <pre>{{filteredProducts}}</pre>
+        <pre>{{filteredProducts}}</pre>
 
       <!-- Loader -->
       <div v-if="loading" class="flex justify-center py-20">
@@ -40,14 +40,9 @@
 
 
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-import useAxios from '@/composables/useAxios' // make sure this path is correct
-
-const { t, locale } = useI18n()
-const axios = useAxios()
-
-const products = ref<any[]>([])
-const loading = ref(true)
+const { t, locale } = useI18n();
+const products = ref<any[]>([]);
+const loading = ref(true);
 
 const form = useForm({
   product: 1, // default to "All products"
@@ -64,32 +59,32 @@ const productsList = [
 ];
 
 function getFaqs() {
-  loading.value = true
-
-  axios.get(`/products/${locale.value}`)
+  loading.value = true;
+  useApi()
+      .$get(`/products/${locale.value}`)
       .then((res) => {
-        products.value = res.data
+        products.value = res;
       })
       .catch((err) => {
-        console.error("Error fetching products:", err)
+        console.error("Error fetching products:", err);
       })
       .finally(() => {
-        loading.value = false
-      })
+        loading.value = false;
+      });
 }
 
-onMounted(getFaqs)
+onMounted(getFaqs);
 
 const filteredProducts = computed(() => {
-  const selected = form.values.product
-  if (selected === 1) return products.value
+  const selected = form.values.product;
+  if (selected === 1) return products.value;
 
-  const selectedItem = productsList.find((item) => item.id === selected)
-  if (!selectedItem) return products.value
+  const selectedItem = productsList.find((item) => item.id === selected);
+  if (!selectedItem) return products.value;
 
   return products.value.filter(
       (product) => product.category === selectedItem.title
-  )
-})
+  );
+});
 
 </script>
