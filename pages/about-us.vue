@@ -30,21 +30,18 @@
 
 <script setup lang="ts">
 const products = ref<any>([])
-
-
 function getFaqs() {
-  const { locale } = useI18n(); // get current locale
+  const { locale } = useI18n() // get current locale
+  const axios = useAxios()     // get axios instance
 
-  useApi()
-      .$get(`/faq/${locale.value}`)
+  axios.get(`/faq/${locale.value}`)
       .then((res) => {
-        products.value = res;
+        products.value = res.data
       })
       .catch((err) => {
-        console.error("Error fetching products:", err);
-      });
+        console.error("Error fetching products:", err)
+      })
 }
-
 
 getFaqs()
 </script>
