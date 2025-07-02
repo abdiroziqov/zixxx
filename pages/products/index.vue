@@ -14,8 +14,6 @@
             :placeholder="t('all_products')"
         />
       </div>
-        <pre>{{filteredProducts}}</pre>
-
       <!-- Loader -->
       <div v-if="loading" class="flex justify-center py-20">
         <div class="w-10 h-10 border-4 border-t-transparent border-gray-300 rounded-full animate-spin"></div>
