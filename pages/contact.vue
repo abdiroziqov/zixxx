@@ -100,6 +100,42 @@
           </ClientOnly>
         </div>
       </div>
+      <!-- Success Modal -->
+      <div
+          v-if="showSuccessModal"
+          class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[99999]"
+      >
+        <div class="bg-white rounded-xl p-6 max-w-md w-full text-center">
+          <h2 class="text-xl font-bold mb-4">{{ t("success") }}</h2>
+          <p class="mb-6">{{ t("message_sent_successfully") }}</p>
+          <BaseButton
+              size="sm"
+              class="mt-6"
+              :text="t('find_out_more')"
+              variant="orange"
+              @click="showSuccessModal = false"
+          />
+        </div>
+      </div>
+
+      <!-- Error Modal -->
+      <div
+          v-if="showErrorModal"
+          class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999]"
+      >
+        <div class="bg-white rounded-xl p-6 max-w-md w-full text-center">
+          <h2 class="text-xl font-bold mb-4">{{ t("error") }}</h2>
+          <p class="mb-6">{{ t("something_went_wrong") }}</p>
+          <BaseButton
+              size="sm"
+              class="mt-6"
+              :text="t('find_out_more')"
+              variant="orange"
+              @click="showErrorModal = false"
+          />
+        </div>
+      </div>
+
       <div class="">
         <h3
           class="font-semibold tracking-[1.2px] leading-130 text-3xl dark:text-white text-dark mb-4 mf:mb-6"
@@ -118,6 +154,8 @@ import { email, required } from "@vuelidate/validators";
 import vueRecaptcha from "vue3-recaptcha2";
 
 const captchaToken = ref();
+const showSuccessModal = ref(false);
+const showErrorModal = ref(false);
 const trigger = ref(false);
 const { t } = useI18n();
 const key = computed(() => import.meta.env.VITE_RECAPTCHA_KEY);
@@ -147,30 +185,32 @@ const form = useForm(
   }
 );
 
-const sendMail = () => {
+const sendMail = async () => {
   form.$v.value.$touch();
-  if (!form.$v.value.$invalid) {
+  if (!form.$v.value.$invalid && captchaToken.value) {
     buttonLoading.value = true;
+
     try {
-      useApi()
-        .$post("contact", {
-          body: {
-            name: form.values.name,
-            message: form.values.message,
-            email: form.values.email,
-            country: form.values.country,
-          },
-        })
-        .then(() => {
-          form.$v.value.$reset();
-          form.values.name = "";
-          form.values.message = "";
-          form.values.email = "";
-          form.values.country = "";
-          trigger.value = true;
-        });
-    } catch (e) {
-      console.log(e);
+      const response = await useApi().$post("contact", {
+        body: {
+          name: form.values.name,
+          message: form.values.message,
+          email: form.values.email,
+          country: form.values.country,
+        },
+      });
+
+      // Success response handling (e.g., status 200)
+      showSuccessModal.value = true;
+      form.$v.value.$reset();
+      form.values.name = "";
+      form.values.message = "";
+      form.values.email = "";
+      form.values.country = "";
+      trigger.value = true;
+    } catch (error) {
+      showErrorModal.value = true;
+      console.error(error);
     } finally {
       buttonLoading.value = false;
     }
@@ -184,6 +224,14 @@ function expiredMethod() {
   captchaToken.value = null;
 }
 
+watch([showSuccessModal, showErrorModal], ([success, error]) => {
+  const isModalOpen = success || error;
+  if (isModalOpen) {
+    document.body.classList.add("overflow-hidden");
+  } else {
+    document.body.classList.remove("overflow-hidden");
+  }
+});
 const cards = [
   {
     description: t("factory_location_one"),

@@ -95,7 +95,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 const variants: Record<TButtonVariants, string> = {
   orange:
-    'text-lg text-[#17161a] dark:hover:text-dark bg-orange border-2 border-orange hover:bg-transparent hover:text-orange',
+    'text-lg text-[#17161a] dark:hover:text-dark bg-orange border-2 border-orange hover:bg-transparent hover:!text-orange',
   border:
     'border-2 border-orange text-orange hover:text-[#17161a] hover:bg-orange',
   disabled:

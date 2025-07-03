@@ -85,5 +85,9 @@
   "comment_four": "Used ZIXX for plastering and leveling walls in the apartment. I liked how easily everything is applied and leveled, the mix does not settle and sets quickly. This significantly simplified the work. It's nice that such a quality product can be found at an affordable price.",
   "comment_five": "For serious renovation work, I always choose ZIXX mixes. Strength and ease of use are important to me as a specialist. During the time of use, there have been no complaints about the product. It is an indispensable assistant in my arsenal of building materials.",
   "all_products": "All products",
-  "no_products_available": "No products available"
+  "no_products_available": "No products available",
+  "success": "Success",
+  "error": "Error",
+  "message_sent_successfully": "Your message has been sent successfully.",
+  "something_went_wrong": "Something went wrong. Please try again later."
 }

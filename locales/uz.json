@@ -85,5 +85,9 @@
   "comment_four": "ZIXX ni gips va devorlarni tekislashda ishlatdim. Surilishi oson, silliqlash qulay, cho‘kmaydi, tez quriydi. Ish ancha yengillashdi. Sifatli va arzon mahsulot.",
   "comment_five": "Jiddiy ta’mir ishlari uchun har doim ZIXX ni tanlayman. Professional sifatida men uchun mustahkamlik va foydalanish qulayligi juda muhim. Hech qanday muammo bo‘lmagan. Qurilishda eng ishonchli yordamchim.",
   "all_products": "Barcha mahsulotlar",
-  "no_products_available": "Mahsulotlar mavjud emas"
+  "no_products_available": "Mahsulotlar mavjud emas",
+  "success": "Muvaffaqiyatli",
+  "error": "Xatolik",
+  "message_sent_successfully": "Xabaringiz muvaffaqiyatli yuborildi.",
+  "something_went_wrong": "Nimadir noto‘g‘ri ketdi. Iltimos, keyinroq yana urinib ko‘ring."
 }
