@@ -16,32 +16,32 @@
         </div>
       </div>
     </div>
-    <div  class="container my-4 mt-10">
+    <div v-if="faq?.length"  class="container my-4 mt-10">
       <h3
         class="text-4xl font-semibold leading-130 tracking-[1.2px] text-dark dark:text-white"
       >
         {{ $t("faq") }}
       </h3>
-      <CommonFaq class="" :faq="products" />
+      <CommonFaq class="" :faq="faq" />
 
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
-const products = ref<any>([])
+const faq = ref<any>([])
 
 
 function getFaqs() {
-  const { locale } = useI18n(); // get current locale
+  const { locale } = useI18n();
 
   useApi()
       .$get(`/faq/${locale.value}`)
       .then((res) => {
-        products.value = res;
+        faq.value = res;
       })
       .catch((err) => {
-        console.error("Error fetching products:", err);
+        console.error("Error fetching faq:", err);
       });
 }
 

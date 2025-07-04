@@ -1,5 +1,5 @@
 <template>
-  <div class="text-dark dark:text-white font-[futura]">
+  <div class="text-dark dark:text-white">
     <h3 class="text-2xl md:text-6xl font-bold uppercase"> {{ data?.name }}</h3>
     <p class="py-1 md:py-4 text-lg">{{ data?.description }}</p>
 
