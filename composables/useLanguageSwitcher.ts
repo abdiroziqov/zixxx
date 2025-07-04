@@ -17,7 +17,7 @@ export const useLanguageSwitcher = () => {
     {
       name: 'Русский',
       code: 'ru',
-      flag: 'images/ru.svg',
+      flag: '/images/ru.svg',
     },
   ]
 
