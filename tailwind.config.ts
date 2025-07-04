@@ -17,7 +17,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'Roboto'"],
+        sans: ["'Roboto', 'Futura PT'"],
       },
       container: {
         center: true,

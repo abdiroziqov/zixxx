@@ -23,7 +23,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxt/eslint", '@nuxtjs/i18n' ,'@nuxtjs/leaflet'],
   fonts: {
-    families: [{ name: 'Roboto', provider: 'google' }],
+    families: [
+        { name: 'Roboto', provider: 'google' },
+        { name: 'Futura PT', provider: 'google' }
+    ],
   },
   compatibilityDate: "2024-12-12",
   runtimeConfig: {

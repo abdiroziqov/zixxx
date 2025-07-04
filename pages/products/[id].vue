@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-white dark:!bg-dark pb-16">
-    <div class="relative container py-6">
+  <div class="bg-white dark:!bg-dark pb-8 md:pb-16">
+    <div class="relative container md:py-6">
       <BaseBreadcrumb :breadcrumb="menu" />
       <div class="md:flex gap-9 mt-10">
         <CommonProductsSwiperProduct :images="productsSingle?.images" />
