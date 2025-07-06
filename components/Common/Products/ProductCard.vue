@@ -15,9 +15,6 @@
         <h3 class="text-lg font-semibold text-gray-800 dark:text-white mt-2">
           {{ item?.name }}
         </h3>
-        <p class="text-gray-600 text-sm mt-1 dark:text-white line-clamp-3">
-          {{ item?.description }}
-        </p>
       </div>
     </NuxtLink>
   </div>

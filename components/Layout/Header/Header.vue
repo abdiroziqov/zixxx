@@ -27,7 +27,7 @@
             >
               <NuxtLink
                 :to="link?.links"
-                class="hover:text-orange text-[#efefef] duration-300"
+                class="hover:text-orange text-[#efefef] duration-300  shadow-text"
                 >{{ link?.name }}</NuxtLink
               >
             </li>
@@ -100,5 +100,8 @@ li {
 header {
   top: 0;
   z-index: 10000;
+}
+.shadow-text {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 </style>

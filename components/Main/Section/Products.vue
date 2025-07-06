@@ -6,7 +6,7 @@
         <p class="tracking-[0.2px]"> {{ $t('products_subtitle') }}</p>
       </div>
       <div class="grid grid-cols-2  md:grid-cols-4 gap-5">
-        <CommonProductsProductCard v-for="item in 2"  :key="item" />
+        <CommonProductsProductCard :products="products.slice(0, 8)" />
       </div>
     </div>
   </div>
@@ -14,5 +14,22 @@
 
 
 <script setup lang="ts">
+const products = ref<any>([])
 
+
+function getFaqs() {
+  const { locale } = useI18n();
+
+  useApi()
+      .$get(`/products/${locale.value}`)
+      .then((res) => {
+        products.value = res;
+      })
+      .catch((err) => {
+        console.error("Error fetching products:", err);
+      });
+}
+
+
+getFaqs()
 </script>
