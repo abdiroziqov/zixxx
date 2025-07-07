@@ -26,7 +26,6 @@
         </div>
 
         <BaseButton
-            main-class="text-white"
             :text="t('about_company')"
             size="sm"
             variant="orange"

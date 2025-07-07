@@ -22,7 +22,6 @@
         <BaseButton
           size="sm"
           class="mt-6"
-          main-class="text-white"
           :text="t('find_out_more')"
           variant="orange"
           @click="$router.push('/about-us')"
