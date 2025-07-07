@@ -75,15 +75,22 @@ onMounted(getFaqs);
 
 const filteredProducts = computed(() => {
   const selected = form.values.product;
-  if (selected === 1) return products.value;
+  let result = [];
 
-  const selectedItem = productsList.find((item) => item.id === selected);
-  if (!selectedItem) return products.value;
+  if (selected === 1) {
+    result = products.value;
+  } else {
+    const selectedItem = productsList.find((item) => item.id === selected);
+    if (selectedItem) {
+      result = products.value.filter(
+          (product) => product.category === selectedItem.title
+      );
+    }
+  }
 
-  return products.value.filter(
-      (product) => product.category === selectedItem.title
-  );
+  return result.slice().sort((a, b) => a.id - b.id); // sort by id ascending
 });
+
 
 </script>
 <!--/-->

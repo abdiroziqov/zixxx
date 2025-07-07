@@ -23,7 +23,7 @@ function getFaqs() {
   useApi()
       .$get(`/products/${locale.value}`)
       .then((res) => {
-        products.value = res;
+        products.value = res?.sort((a, b) => a.id - b.id);
       })
       .catch((err) => {
         console.error("Error fetching products:", err);
