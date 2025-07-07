@@ -4,7 +4,7 @@
       :to="`/products/${item?.id}`"
       class="border hover:shadow-lg duration-300 rounded-lg overflow-hidden block"
     >
-      <div class="w-[305px] h-[305px]">
+      <div class="sm:w-[305px] sm:h-[305px]">
         <img
           class="w-full h-full object-cover "
           :src="item?.image1 || '/logo2.svg'"

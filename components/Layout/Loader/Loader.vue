@@ -9,11 +9,11 @@
       >
         <svg
           :class="{ '!opacity-100 translate-x-0': fullSvg }"
-          class="absolute top-[40%] opacity-0 transition-300 duration-300"
+          class="absolute top-[27%] opacity-0 transition-300 duration-300"
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"
-          width="300px"
-          height="200px"
+          width="400px"
+          height="300px"
           viewBox="0 0 2080.000000 2080.000000"
           preserveAspectRatio="xMidYMid meet"
         >

@@ -3,7 +3,7 @@
     <h3 class="text-2xl md:text-6xl font-bold uppercase"> {{ data?.name }}</h3>
     <p class="py-1 md:py-4 text-lg">{{ data?.description }}</p>
 
-    <h4 class="text-2xl md:text-[32px] font-bold">{{ $t('properties') }}</h4>
+    <h4 class="text-2xl md:text-[32px] font-bold mb-3">{{ $t('properties') }}</h4>
     <div class="singel" v-html="data?.features"/>
   </div>
 </template>
