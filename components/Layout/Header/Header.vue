@@ -7,7 +7,7 @@
           : 'bg-transparent'
         : isScrolled
         ? 'bg-black dark:bg-dark'
-        : 'bg-dark',
+        : 'bg-gray',
       isHomeRoute ? 'fixed !w-full' : 'relative',
     ]"
     class="z-10 transition-all duration-300"
