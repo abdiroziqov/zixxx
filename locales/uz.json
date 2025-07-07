@@ -89,5 +89,20 @@
   "success": "Muvaffaqiyatli",
   "error": "Xatolik",
   "message_sent_successfully": "Xabaringiz muvaffaqiyatli yuborildi.",
-  "something_went_wrong": "Nimadir noto‘g‘ri ketdi. Iltimos, keyinroq yana urinib ko‘ring."
+  "something_went_wrong": "Nimadir noto‘g‘ri ketdi. Iltimos, keyinroq yana urinib ko‘ring.",
+  "features": {
+    "quality_title": "Sifatli va arzon",
+    "quality_desc": "ZIXXning yuqori sifatli va ekologik toza qurilish aralashmalari bezatish ishlari uchun.",
+    "reliable_title": "Ishonchli va tezkor",
+    "reliable_desc": "Natija muhim bo‘lganda, qurilish va ta’mirlashda a’lo tanlovingiz bu yerda.",
+    "delivery_title": "O'zbekiston bo'ylab yetkazib berish",
+    "delivery_desc": "'RAZATA' kompaniyasi butun O‘zbekiston bo‘ylab yuqori sifatli mikrokaltsitning ulgurji yetkazib beruvchisidir."
+  },
+  "labels": {
+    "timely_delivery": "O‘z vaqtida yuklash",
+    "affordable_price": "Arzon narx",
+    "expanding_range": "Kengayib borayotgan assortiment"
+  }
+}
+
 }

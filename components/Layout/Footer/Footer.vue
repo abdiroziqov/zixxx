@@ -36,7 +36,7 @@
             >
               <NuxtLink
                 :to="link?.links"
-                class="hover:text-orange dark:text-[#efefef] text-dark duration-300 tracking-[0.2px] opacity-80"
+                class="hover:text-orange dark:text-[#efefef] dark:hover:text-orange text-dark duration-300 tracking-[0.2px] opacity-80"
                 >{{ link?.name }}</NuxtLink
               >
             </li>

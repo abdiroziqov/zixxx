@@ -89,5 +89,18 @@
   "success": "Success",
   "error": "Error",
   "message_sent_successfully": "Your message has been sent successfully.",
-  "something_went_wrong": "Something went wrong. Please try again later."
+  "something_went_wrong": "Something went wrong. Please try again later.",
+  "features": {
+    "quality_title": "High Quality and Affordable",
+    "quality_desc": "High-quality and eco-friendly ZIXX construction mixes for finishing works.",
+    "reliable_title": "Reliable and Fast",
+    "reliable_desc": "Your excellent choice for construction and renovation when results matter...",
+    "delivery_title": "Delivery Across Uzbekistan",
+    "delivery_desc": "RAZATA is a wholesale supplier of high-quality microcalcite across Uzbekistan."
+  },
+  "labels": {
+    "timely_delivery": "Timely Delivery",
+    "affordable_price": "Affordable Price",
+    "expanding_range": "Product Range"
+  }
 }

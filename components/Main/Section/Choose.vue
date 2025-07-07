@@ -62,39 +62,41 @@
 
 <script setup lang="ts">
 const { t } = useI18n();
-const image = "/worker.png"; // Change this to your actual image path
+const image = "/worker.png";
 
 const features = [
   {
-    title: "Качественный и доступный",
-    description:
-      "Высококачественные и экологически чистые строительные смеси ZIXX для отделочных работ.",
+    title: t("features.quality_title"),
+    description: t("features.quality_desc"),
     icon: "fas fa-check",
   },
   {
-    title: "Надежно и быстро",
-    description:
-      "Это ваш отличный выбор в строительстве и ремонте, когда важен результат...",
+    title: t("features.reliable_title"),
+    description: t("features.reliable_desc"),
     icon: "fas fa-shield-alt",
   },
   {
-    title: "Доставка по Узбекистану",
-    description:
-      "Компания 'RAZATA' является оптовым поставщиком высококачественного микрокальцита по всей территории Узбекистана.",
+    title: t("features.delivery_title"),
+    description: t("features.delivery_desc"),
     icon: "fas fa-truck",
   },
 ];
 
 const labels = [
   {
-    text: "Своевременная отгрузка",
+    text: t("labels.timely_delivery"),
     icon: "fas fa-truck",
     top: "23%",
     right: "0",
   },
-  { text: " Доступная цена", icon: "fas fa-wrench", top: "15%", right: "60%" },
   {
-    text: "Наполняемый ассортимент",
+    text: t("labels.affordable_price"),
+    icon: "fas fa-wrench",
+    top: "15%",
+    right: "60%",
+  },
+  {
+    text: t("labels.expanding_range"),
     icon: "fas fa-tools",
     top: "66%",
     right: "50%",
