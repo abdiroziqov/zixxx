@@ -10,15 +10,16 @@ export const useLanguageSwitcher = () => {
       flag: '/images/uz.svg',
     },
     {
-      name: 'English',
-      code: 'en',
-      flag: '/images/uk.svg',
-    },
-    {
       name: 'Русский',
       code: 'ru',
       flag: '/images/ru.svg',
     },
+    {
+      name: 'English',
+      code: 'en',
+      flag: '/images/uk.svg',
+    },
+
   ]
 
   const currentLanguage = computed(() =>
