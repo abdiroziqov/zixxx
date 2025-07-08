@@ -36,7 +36,6 @@ defineProps<Props>();
         :pagination="{ clickable: true }"
         class="rounded-lg overflow-hidden shadow-xl"
     >
-        <pre>{{images}}</pre>
       <SwiperSlide v-for="(image, index) in images" :key="index">
         <img :src="image || '/logo2.svg'" :alt="'Slide ' + index" class="w-full h-auto object-cover" />
       </SwiperSlide>
