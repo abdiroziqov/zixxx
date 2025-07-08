@@ -11,8 +11,8 @@
       <div v-else class="flex justify-center items-center min-h-[200px]">
         <span class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></span>
       </div>
-      <h1 class="text-2xl md:text-[32px] font-bold mt-10">Oxshash tovarlar</h1>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mt-10">
+      <h1 class="text-2xl md:text-[32px] font-bold mt-10">{{ $t('similar_goods') }}</h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mt-5">
         <CommonProductsProductCard :products="products.slice(0, 4)" />
       </div>
     </div>
