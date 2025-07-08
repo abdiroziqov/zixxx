@@ -36,8 +36,13 @@ defineProps<Props>();
         :pagination="{ clickable: true }"
         class="rounded-lg overflow-hidden shadow-xl"
     >
+        <pre>{{images}}</pre>
       <SwiperSlide v-for="(image, index) in images" :key="index">
-        <img :src="image" :alt="'Slide ' + index" class="w-full h-auto object-cover" />
+        <img :src="image || '/logo2.svg'" :alt="'Slide ' + index" class="w-full h-auto object-cover" />
+      </SwiperSlide>
+
+      <SwiperSlide v-if="!images || images.length === 0">
+        <img src="/logo2.svg" alt="Default Slide" class="w-full h-auto object-cover" />
       </SwiperSlide>
     </Swiper>
   </div>
