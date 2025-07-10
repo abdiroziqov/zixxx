@@ -7,10 +7,9 @@
         <div class="md:flex gap-9 mt-10">
           <CommonProductsSwiperProduct :images="productsSingle?.images" />
           <CommonProductsLeftSide class="mt-5 md:mt-0" :data="productsSingle" />
-
         </div>
         <div>
-          <h1 class="text-2xl md:text-[32px] font-bold mt-10">{{ $t('similar_goods') }}</h1>
+          <h1 class="text-2xl md:text-[32px] font-bold mt-10 dark:text-white">{{ $t('similar_goods') }}</h1>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mt-5">
             <CommonProductsProductCard :products="products.slice(0, 4)" />
           </div>
@@ -30,6 +29,7 @@ import { useRoute } from "vue-router";
 import { useApi } from "@/composables/useApi"; // adjust path if needed
 
 const route = useRoute();
+
 const productsSingle = ref<any>([]);
 const loading = ref(true);
 
