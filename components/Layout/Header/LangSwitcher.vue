@@ -99,7 +99,7 @@ function handleDropdownToggle(val: boolean) {
 
 onMounted(async () => {
   if (useCookie("locale").value) {
-    await setLocale(useCookie("locale").value || "en");
+    await setLocale(useCookie("locale").value || "ru");
   }
 });
 </script>

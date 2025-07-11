@@ -27,7 +27,7 @@
 import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
 import { useApi } from "@/composables/useApi"; // adjust path if needed
-
+const { locale } = useI18n();
 const route = useRoute();
 
 const productsSingle = ref<any>([]);
@@ -36,7 +36,7 @@ const loading = ref(true);
 function getProductSingle() {
   loading.value = true;
   useApi()
-      .$get(`/product/${route.params.id}`)
+      .$get(`/product/${locale.value}/${route.params.id}`)
       .then((res) => {
         productsSingle.value = res;
       })
