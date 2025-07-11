@@ -77,5 +77,9 @@
     "affordable_price": "Доступная цена",
     "expanding_range": "Наполняемый ассортимент"
   },
-  "similar_goods": "Похожие товары"
+  "similar_goods": "Похожие товары",
+  "successfully_sent": "Успешно отправлено",
+  "thank_you_for_your_number": "Спасибо за ваш номер, мы скоро с вами свяжемся.",
+  "original_image": "Посмотреть оригинальное изображение",
+  "enter_telegram_number": "Введите ваш номер Telegram"
 }

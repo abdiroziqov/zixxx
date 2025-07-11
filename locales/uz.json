@@ -77,5 +77,9 @@
     "affordable_price": "Arzon narx",
     "expanding_range": "Kengayib borayotgan assortiment"
   },
-  "similar_goods": "O'xshash tovarlar"
+  "similar_goods": "O'xshash tovarlar",
+  "successfully_sent": "Sizning xabaringiz muvaffaqiyatli yuborildi.",
+  "thank_you_for_your_number": "Rahmat, raqamingiz uchun, tez orada siz bilan bog‘lanamiz.",
+  "original_image": "Asl rasmni ko‘rish",
+  "enter_telegram_number": "Telegram raqamingizni kiriting"
 }

@@ -77,5 +77,9 @@
     "affordable_price": "Affordable Price",
     "expanding_range": "Product Range"
   },
-  "similar_goods": "Similar goods"
+  "similar_goods": "Similar goods",
+  "successfully_sent": "Your message has been successfully sent.",
+  "thank_you_for_your_number": "Thank you for your number, we will contact you soon.",
+  "original_image": "See original image",
+  "enter_telegram_number": "Enter your Telegram number"
 }
