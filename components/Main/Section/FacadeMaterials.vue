@@ -10,7 +10,7 @@
       </div>
       <div class="lg:max-w-[487px] mt-5 lg:mt-0">
         <h3
-          class="text-3xl font-semibold leading-130 tracking-[1.2px] text-gray-800 dark:text-white"
+          class="text-2xl sm:text-3xl font-semibold leading-130 tracking-[1.2px] text-gray-800 dark:text-white"
         >
           {{ $t("facade_materials") }}
         </h3>

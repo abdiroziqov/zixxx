@@ -47,6 +47,25 @@ function getFaqs() {
 
 
 getFaqs()
+
+const about = ref<any>([])
+
+
+function getAbout() {
+  const { locale } = useI18n();
+
+  useApi()
+      .$get(`/about/${locale.value}`)
+      .then((res) => {
+        faq.value = res;
+      })
+      .catch((err) => {
+        console.error("Error fetching faq:", err);
+      });
+}
+
+
+getAbout()
 </script>
 
 <style>

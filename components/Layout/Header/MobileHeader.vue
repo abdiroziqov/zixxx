@@ -45,7 +45,7 @@
         >
           <NuxtLink
               :to="link?.links"
-              class="hover:text-orange text-white duration-300 leading-[150%] !font-semibold  text-base hover:text-red my-3"
+              class="hover:text-orange text-white duration-300 leading-[150%] !font-semibold  text-base hover:text-red my-3 shadow-text"
           >{{ link?.name }}</NuxtLink
           >
         </li>
@@ -99,3 +99,9 @@ const quickLinks = [
   },
 ];
 </script>
+
+<style>
+.shadow-text {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+</style>

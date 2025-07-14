@@ -15,6 +15,9 @@
         <h3 class="text-lg font-semibold text-gray-800 dark:text-white mt-2">
           {{ item?.name }}
         </h3>
+        <p class="text-gray-600 mt-1 dark:text-white">
+          {{ item?.subcategory }}
+        </p>
       </div>
     </NuxtLink>
   </div>
@@ -26,6 +29,7 @@ interface Product {
   name: string;
   description: string;
   image1: string;
+  subcategory: string;
 }
 
 interface Props {

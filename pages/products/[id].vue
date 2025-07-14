@@ -3,22 +3,24 @@
     <div class="relative container md:py-6">
       <BaseBreadcrumb :breadcrumb="menu" />
 
-      <div  v-if="!loading" >
+      <div v-if="!loading">
         <div class="md:flex gap-9 mt-10">
           <CommonProductsSwiperProduct :images="productsSingle?.images" />
           <CommonProductsLeftSide class="mt-5 md:mt-0" :data="productsSingle" />
         </div>
-        <div>
-          <h1 class="text-2xl md:text-[32px] font-bold mt-10 dark:text-white">{{ $t('similar_goods') }}</h1>
+        <div v-if="filteredProducts.length > 0">
+          <h1 class="text-2xl md:text-[32px] font-bold mt-10 dark:text-white">
+            {{ $t('similar_goods') }}
+          </h1>
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mt-5">
-            <CommonProductsProductCard :products="products.slice(0, 4)" />
+            <CommonProductsProductCard :products="filteredProducts.slice(0, 4)" />
           </div>
         </div>
       </div>
+
       <div v-else class="flex justify-center items-center min-h-[200px]">
         <span class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></span>
       </div>
-
     </div>
   </div>
 </template>
@@ -30,7 +32,7 @@ import { useApi } from "@/composables/useApi"; // adjust path if needed
 const { locale } = useI18n();
 const route = useRoute();
 
-const productsSingle = ref<any>([]);
+const productsSingle = ref<any>(null);
 const loading = ref(true);
 
 function getProductSingle() {
@@ -41,7 +43,7 @@ function getProductSingle() {
         productsSingle.value = res;
       })
       .catch((err) => {
-        console.error("Error fetching products:", err);
+        console.error("Error fetching product:", err);
       })
       .finally(() => {
         loading.value = false;
@@ -50,14 +52,9 @@ function getProductSingle() {
 
 getProductSingle();
 
-
-
-const products = ref<any>([])
-
+const products = ref<any[]>([]);
 
 function getFaqs() {
-  const { locale } = useI18n();
-
   useApi()
       .$get(`/products/${locale.value}`)
       .then((res) => {
@@ -68,19 +65,19 @@ function getFaqs() {
       });
 }
 
+getFaqs();
+const filteredProducts = computed(() =>
+    products.value.filter((item) => item.id !== productsSingle.value?.id)
+);
 
-getFaqs()
-
-const menu = computed(() => {
-  return [
-    {
-      title: "Products",
-      link: "/products",
-    },
-    {
-      title: productsSingle.value?.name || "Loading...",
-      link: "",
-    },
-  ];
-});
+const menu = computed(() => [
+  {
+    title: "Products",
+    link: "/products",
+  },
+  {
+    title: productsSingle.value?.name || "Loading...",
+    link: "",
+  },
+]);
 </script>
