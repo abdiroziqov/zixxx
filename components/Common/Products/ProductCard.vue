@@ -11,7 +11,7 @@
           alt="image"
         />
       </div>
-      <div class="p-2">
+      <div class="p-2 border-t">
         <h3 class="text-lg font-semibold text-gray-800 dark:text-white mt-2">
           {{ item?.name }}
         </h3>
