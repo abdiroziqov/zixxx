@@ -3,7 +3,7 @@
     <div class="container">
       <div class="md:flex justify-between">
         <div class="md:w-[487px] mb-5 md:mb-0">
-          <p class="font-semibold text-3xl leading-130 dark:text-white">
+          <p class="font-semibold text-2xl md:text-3xl leading-130 dark:text-white">
             {{ $t("satisfied_customers") }}
           </p>
           <p

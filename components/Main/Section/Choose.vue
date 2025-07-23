@@ -6,7 +6,7 @@
       <!-- Left Side - Text & Features -->
       <div class="lg:w-[465px]">
         <h2
-            class="text-3xl font-semibold leading-130 tracking-[1.2px] mb-9 text-gray-800 dark:text-white"
+            class="text-2xl md:text-3xl font-semibold leading-130 tracking-[1.2px] mb-9 text-gray-800 dark:text-white"
         >
           {{ $t("why_peoples_choose_us") }}
         </h2>

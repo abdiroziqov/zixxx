@@ -8,11 +8,12 @@
           <CommonProductsSwiperProduct :images="productsSingle?.images" />
           <CommonProductsLeftSide class="mt-5 md:mt-0" :data="productsSingle" />
         </div>
+
         <div v-if="filteredProducts.length > 0">
           <h1 class="text-2xl md:text-[32px] font-bold mt-10 dark:text-white">
             {{ $t('similar_goods') }}
           </h1>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mt-5">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-5">
             <CommonProductsProductCard :products="filteredProducts.slice(0, 4)" />
           </div>
         </div>
@@ -24,17 +25,20 @@
     </div>
   </div>
 </template>
-
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
-import { useApi } from "@/composables/useApi"; // adjust path if needed
+import { useI18n } from "vue-i18n";
+import { useApi } from "@/composables/useApi";
+
 const { locale } = useI18n();
 const route = useRoute();
 
 const productsSingle = ref<any>(null);
+const products = ref<any[]>([]);
 const loading = ref(true);
 
+// Fetch single product by ID
 function getProductSingle() {
   loading.value = true;
   useApi()
@@ -50,10 +54,7 @@ function getProductSingle() {
       });
 }
 
-getProductSingle();
-
-const products = ref<any[]>([]);
-
+// Fetch all products
 function getFaqs() {
   useApi()
       .$get(`/products/${locale.value}`)
@@ -65,11 +66,29 @@ function getFaqs() {
       });
 }
 
+getProductSingle();
 getFaqs();
-const filteredProducts = computed(() =>
-    products.value.filter((item) => item.id !== productsSingle.value?.id)
-);
 
+// Helper function to shuffle array
+function shuffleArray<T>(array: T[]): T[] {
+  return array
+      .map(value => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value);
+}
+
+// Randomized similar products (same category)
+const filteredProducts = computed(() => {
+  if (!productsSingle.value) return [];
+  const similar = products.value.filter(
+      (item) =>
+          item.id !== productsSingle.value?.id &&
+          item.category_id === productsSingle.value?.category_id
+  );
+  return shuffleArray(similar);
+});
+
+// Breadcrumb menu
 const menu = computed(() => [
   {
     title: "Products",

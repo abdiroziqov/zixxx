@@ -13,9 +13,8 @@
       <p class="font-bold text-2xl text-dark dark:text-white">
         {{ $t("factory") }} ({{ item?.description.split(" ")[1] }})
       </p>
-      <p class="font-medium line-clamp-3 text-dark dark:text-white">
-        {{ item?.description }}
-      </p>
+      <p v-html="item?.description" class="font-medium line-clamp-3 text-dark dark:text-white"/>
+
     </div>
   </div>
 </template>

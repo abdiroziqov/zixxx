@@ -114,11 +114,11 @@ const sendMail = async () => {
           <FormInput
               v-model="form.values.telegramNumber"
               is-transparent
+              type="number"
               :error="form.$v.value.telegramNumber?.$error"
               input-class="pl-3 py-4 dark:bg-[#393A3F] bg-[#393a3f1a] !font-medium text-black"
               class="!font-medium mb-5"
-              v-maska="'(##) ###-##-##'"
-              :placeholder="('+998 _ _ _  _ _  _ _')"
+              :placeholder="$t('enter_ur_number')"
           />
           <BaseButton
               :text="t('send')"

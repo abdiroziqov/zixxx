@@ -232,18 +232,20 @@ watch([showSuccessModal, showErrorModal], ([success, error]) => {
     document.body.classList.remove("overflow-hidden");
   }
 });
+
 const cards = [
   {
-    description: t("factory_location_one"),
+    description: `${t("factory_location_one")}<br>${t("factory_location_one_desc")}`,
     image: "/images/img1.JPG",
   },
   {
-    description: t("factory_location_two"),
+    description: `${t("factory_location_two")}<br>${t("factory_location_two_desc")}`,
     image: "/images/img2.JPG",
   },
   {
-    description: t("factory_location_three"),
+    description: `${t("factory_location_three")}<br>${t("factory_location_three_desc")}`,
     image: "/images/img3.JPG",
   },
 ];
+
 </script>

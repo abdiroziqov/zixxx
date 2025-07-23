@@ -41,9 +41,12 @@
   "factory_locations": "Zavod manzillari",
   "faq": "Ko‘p so‘raladigan savollar",
   "factory": "Zavod",
-  "factory_location_one": "210609 Navoiy viloyati, Karmana tumani, Navoiy EIZ. Mo‘ljal: Navoiy xalqaro aeroporti",
-  "factory_location_two": "100116 Toshkent , Yashnobod tumani, Tolarik ko‘chasi, 2-uy. Mo‘ljal: Yangiobod bozori ro‘parasida",
-  "factory_location_three": "180700 Qashqadaryo viloyati, Kitob tumani, MSG Guliston, Buyuk Ipak Yo‘li ko‘chasi, 121-uy. Mo‘ljal: sobiq viloyat YHXB",
+  "factory_location_one": "210609 Navoiy viloyati, Karmana tumani, Navoiy EIZ.",
+  "factory_location_one_desc": "Mo‘ljal: Navoiy xalqaro aeroporti",
+  "factory_location_two": "100116 Toshkent , Yashnobod tumani, Tolarik ko‘chasi, 2-uy.",
+    "factory_location_two_desc": "Mo‘ljal: Yangiobod bozori ro‘parasida",
+  "factory_location_three": "180700 Qashqadaryo viloyati, Kitob tumani, MSG Guliston, Buyuk Ipak Yo‘li ko‘chasi, 121-uy.",
+  "factory_location_three_desc": "Mo‘ljal: sobiq viloyat YHXB",
   "ilhom_abdiroziqov": "Ilhom Abdiroziqov",
   "nasir_mahmudov": "Nasir Mahmudov",
   "rahim_berdiev": "Rahim Berdiev",
@@ -81,5 +84,7 @@
   "successfully_sent": "Sizning xabaringiz muvaffaqiyatli yuborildi.",
   "thank_you_for_your_number": "Rahmat! Tez orada Siz bilan bog'lanamiz.",
   "original_image": "Mahsulotning haqiqiy rasmini ko'rish",
-  "enter_telegram_number": "Telegram raqamingizni kiriting"
+  "enter_telegram_number": "Telegram raqamingizni kiriting",
+  "enter_ur_number": "Raqamingizni kiriting",
+  "OOO": "MChJ"
 }

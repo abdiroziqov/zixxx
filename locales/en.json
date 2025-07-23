@@ -41,9 +41,12 @@
   "factory_locations": "Factory locations",
   "faq": "Frequently Asked Questions",
   "factory": "Factory",
-  "factory_location_one": "210609 Navoi region, Karmana district, Navoi FEZ Landmark: Navoi International Airport",
-  "factory_location_two": "100116 Tashkent Yashnabad district, Tolarik street, house 2 Landmark: opposite Yangiabad market",
-  "factory_location_three": "180700 Kashkadarya region, Kitab district, MSG Gulistan, Buyuk Ipak Yuli street, house 121 Landmark: former district traffic police",
+  "factory_location_one": "210609 Navoi region, Karmana district, Navoi FEZ ",
+  "factory_location_one_desc": "Landmark: Navoi International Airport",
+  "factory_location_two": "100116 Tashkent Yashnabad district, Tolarik street, house 2",
+    "factory_location_two_desc": "Landmark: opposite Yangiabad market",
+  "factory_location_three": "180700 Kashkadarya region, Kitab district, MSG Gulistan, Buyuk Ipak Yuli street, house 121",
+  "factory_location_three_desc": "Landmark: former district traffic police",
   "ilhom_abdiroziqov": "Ilhom Abdiroziqov",
   "nasir_mahmudov": "Nasir Mahmudov",
   "rahim_berdiev": "Rahim Berdiev",
@@ -81,5 +84,7 @@
   "successfully_sent": "Your message has been successfully sent.",
   "thank_you_for_your_number": "Thank you! We will contact you soon.",
   "original_image": "Request a real photo of the product",
-  "enter_telegram_number": "Enter your Telegram number"
+  "enter_telegram_number": "Enter your Telegram number",
+  "enter_ur_number": "Enter your number",
+  "ООО": "LLC"
 }
