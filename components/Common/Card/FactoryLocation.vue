@@ -11,7 +11,7 @@
     />
     <div class="p-3 bg-white dark:bg-dark">
       <p class="font-bold text-2xl text-dark dark:text-white">
-        {{ $t("factory") }} ({{ item?.description.split(" ")[1] }})
+        {{ $t("factory") }} {{ item?.name }}
       </p>
       <p v-html="item?.description" class="font-medium line-clamp-3 text-dark dark:text-white"/>
 
@@ -21,6 +21,7 @@
 <script setup lang="ts">
 interface Props {
   items: {
+    name: string;
     image: string;
     description: string;
   };

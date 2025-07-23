@@ -86,5 +86,8 @@
   "original_image": "Request a real photo of the product",
   "enter_telegram_number": "Enter your Telegram number",
   "enter_ur_number": "Enter your number",
-  "ООО": "LLC"
+  "ООО": "LLC",
+  "factory_location_one_name": "Navoi",
+    "factory_location_two_name": "Tashkent",
+    "factory_location_three_name": "Kashkadarya"
 }

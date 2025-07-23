@@ -235,14 +235,17 @@ watch([showSuccessModal, showErrorModal], ([success, error]) => {
 
 const cards = [
   {
+    name: t("factory_location_one_name"),
     description: `${t("factory_location_one")}<br>${t("factory_location_one_desc")}`,
     image: "/images/img1.JPG",
   },
   {
+    name: t("factory_location_two_name"),
     description: `${t("factory_location_two")}<br>${t("factory_location_two_desc")}`,
     image: "/images/img2.JPG",
   },
   {
+   name: t("factory_location_three_name"),
     description: `${t("factory_location_three")}<br>${t("factory_location_three_desc")}`,
     image: "/images/img3.JPG",
   },
