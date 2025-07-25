@@ -8,7 +8,7 @@ export default defineNuxtConfig({
           rel: 'canonical',
           href: 'https://zixx.uz',
         },
-        { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/logo1.svg' },
       ],
       title: 'ZIXX - Сухие строительные смеси',
       htmlAttrs: {

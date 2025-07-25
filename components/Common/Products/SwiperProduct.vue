@@ -100,6 +100,7 @@ const sendMail = async () => {
         class="mt-6"
         size="sm"
         :text="t('original_image')"
+        text-class="text-xs sm:text-sm"
         variant="orange"
         @click="openModal"
     />

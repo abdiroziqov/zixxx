@@ -12,10 +12,10 @@
         />
       </div>
       <div class="p-2 border-t">
-        <h3 class="text-sm md:text-lg font-semibold text-gray-800 dark:text-white mt-2">
+        <h3 class="text-sm md:text-lg line-clamp-1 font-semibold text-gray-800 dark:text-white mt-2">
           {{ item?.name }}
         </h3>
-        <p class="text-gray-600 mt-1 dark:text-white">
+        <p class="text-gray-600 mt-1 dark:text-white line-clamp-1">
           {{ item?.subcategory }}
         </p>
       </div>
