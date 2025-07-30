@@ -6,17 +6,17 @@
       <div class="container">
         <div class="md:w-[500px]">
           <h3
-            class="text-3xl font-semibold leading-130 tracking-[1.2px] text-white"
+            class="text-3xl font-semibold leading-130 tracking-[1.2px] dark:text-white"
           >
             {{ $t("company_razata") }}
           </h3>
-          <p class="text-lg leading-140 mt-6 text-white">
+          <p class="text-lg leading-140 mt-6 dark:text-white">
             {{ $t("company_rzata_text") }}
           </p>
         </div>
       </div>
     </div>
-    <div class="w-full lg:w-[782px] mx-auto">
+    <div class="w-full container lg:w-[782px] mx-auto">
     <div class="flex md:justify-center flex-col pt-4 pb-10 gap-6">
       <h3
           class="font-semibold tracking-[1.2px] leading-130 text-3xl dark:text-white text-dark"
@@ -148,7 +148,6 @@
         />
       </div>
     </div>
-
 
     <div v-if="faq?.length"  class="container my-4 mt-10">
       <h3
