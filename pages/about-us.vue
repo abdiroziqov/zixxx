@@ -4,13 +4,13 @@
       class="main__about py-10 bg-[url('/public/images/about.png')] bg-cover bg-no-repeat"
     >
       <div class="container">
-        <div class="md:w-[500px]">
+        <div class="md:w-[470px]">
           <h3
-            class="text-3xl font-semibold leading-130 tracking-[1.2px] dark:text-white"
+            class="text-3xl font-semibold leading-130 tracking-[1.2px] text-white"
           >
             {{ $t("company_razata") }}
           </h3>
-          <p class="text-lg leading-140 mt-6 dark:text-white">
+          <p class="text-lg leading-140 mt-6 text-white">
             {{ $t("company_rzata_text") }}
           </p>
         </div>
