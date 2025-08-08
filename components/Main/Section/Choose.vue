@@ -38,12 +38,12 @@
           <img
               src="/public/images/worker.svg"
               alt="Worker"
-              class="relative w-full max-w-md lg:max-w-lg hidden dark:block"
+              class="relative w-full max-w-md lg:max-w-lg hidden dark:block mt-5 md:mt-0"
           />
           <img
               src="/public/images/worker-light.svg"
               alt="Worker"
-              class="relative w-full max-w-md lg:max-w-lg dark:hidden"
+              class="relative w-full max-w-md lg:max-w-lg dark:hidden mt-5 md:mt-0"
           />
           <div
               v-for="(label, index) in labels"

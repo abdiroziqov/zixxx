@@ -3,26 +3,29 @@
     class="bg-white dark:bg-gray dark:text-white text-dark pt-6 md:pt-10 border-[rgba(196,196,196,0.2)] border-t"
   >
     <div
-      class="container justify-between grid md:flex gap-5 md:gap-10 pb-6 md:pb-10"
+      class="container justify-between md:flex gap-5 md:gap-10 pb-6 md:pb-10"
     >
       <div>
-        <a href="/">
-          <img class="hidden dark:block" src="/logo.svg" alt="logo" />
-          <img class="dark:hidden" src="/logo1.svg" alt="logo" />
+        <a class="flex justify-center" href="/">
+          <img class="hidden dark:block w-[200px]" src="/logo.svg" alt="logo" />
+          <img class="dark:hidden w-[200px]" src="/logo1.svg" alt="logo" />
         </a>
-        <p class="dark:text-white text-dark font-normal leading-140 w-[209px]">
+        <p class="dark:text-white text-dark font-normal leading-140 md:w-[209px] text-center">
           {{ $t("footer_description") }}
+        </p>
+        <p class="dark:text-white text-dark font-normal leading-140 md:w-[209px] text-center">
+          {{ $t('footer_description_text') }}
         </p>
       </div>
       <div class="md:flex grid gap-4 md:gap-8">
         <div>
-          <p class="text-xl font-semibold font-white mb-3 md:text-center">
+          <p class="text-xl font-semibold font-white mt-3 md:mt-0 mb-3 text-center">
             {{ $t("social_media") }}
           </p>
           <CommonSocials :socials="socialsData" />
         </div>
 
-        <div>
+        <div class="text-center md:text-start">
           <h3
             class="font-bold text-[20px] dark:text-white text-dark inline-block pb-2"
           >
@@ -42,7 +45,7 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div class="text-center md:text-start">
           <h3
             class="font-bold text-[20px] dark:text-white text-dark inline-block pb-2"
           >
@@ -58,7 +61,7 @@
                 <div>
                   <a
                     :href="`tel:${contact.value}`"
-                    class="hover:!text-orange dark:text-[#efefef] text-dark duration-300 flex gap-2 items-center"
+                    class="hover:!text-orange dark:text-[#efefef] text-dark duration-300 flex gap-2 items-center justify-center md:justify-start"
                   >
                     <i class="icon-phone text-2xl" />
                     {{ contact.value }}
@@ -68,7 +71,7 @@
               <template v-else-if="contact.type === 'email'">
                 <a
                   :href="`mailto:${contact.value}`"
-                  class="hover:!text-orange dark:text-[#efefef] text-dark duration-300 flex gap-2 items-center"
+                  class="hover:!text-orange dark:text-[#efefef] text-dark duration-300 flex gap-2 items-center justify-center md:justify-start"
                 >
                   <i class="icon-letter text-2xl" />
                   {{ contact.value }}
@@ -78,7 +81,7 @@
                 <a
                   target="_blank"
                   href="https://yandex.uz/maps/geo/5403718816/?ll=69.265099%2C41.319533&z=19.86"
-                  class="hover:!text-orange dark:text-[#efefef] text-dark duration-300 flex gap-2 items-center"
+                  class="hover:!text-orange dark:text-[#efefef] text-dark duration-300 flex gap-2 items-center justify-center md:justify-start"
                 >
                   <i class="icon-location text-2xl" />
                   {{ contact.value }}
@@ -96,16 +99,6 @@
         © {{ currentYear }}
         <span class="font-bold">{{ $t("OOO") }} "RAZATA" </span>
         {{ $t("all_rights_reserved") }}
-      </p>
-      <span class="hidden md:block">|</span>
-      <p>
-        {{ $t("developed_and_designed_by") }}
-        <a
-          target="_blank"
-          href="https://t.me/ilkhomab"
-          class="font-bold text-base"
-          >Iceek</a
-        >
       </p>
     </div>
   </footer>

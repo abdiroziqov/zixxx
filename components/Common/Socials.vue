@@ -41,7 +41,7 @@ const socials = computed(() => [
 </script>
 
 <template>
-  <div class="flex-y-center gap-3 md:gap-4">
+  <div class="flex-y-center justify-center gap-3 md:gap-4">
     <ul class="flex gap-2.5">
       <template v-for="i in socials" :key="i.social">
         <li
