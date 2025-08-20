@@ -96,7 +96,7 @@
       class="container space-x-2 flex justify-center border-[rgba(196,196,196,0.2)] border-t py-4 text-sm items-center"
     >
       <p>
-        © {{ currentYear }}1
+        © {{ currentYear }}
         <span class="font-bold">{{ $t("OOO") }} "RAZATA" </span>
         {{ $t("all_rights_reserved") }}
       </p>
