@@ -13,10 +13,10 @@
       </div>
       <div class="p-2 border-t">
         <h3 class="text-sm md:text-lg line-clamp-1 font-semibold text-gray-800 dark:text-white mt-2">
-          {{ item?.name }}
+          {{ item?.name[locale] }}
         </h3>
         <p class="text-gray-600 mt-1 dark:text-white line-clamp-1">
-          {{ item?.subcategory }}
+          {{ item?.subcategory[locale] }}
         </p>
       </div>
     </NuxtLink>
@@ -24,17 +24,25 @@
 </template>
 
 <script setup lang="ts">
+import { useI18n } from "vue-i18n";
+
+const { locale } = useI18n();
+
+interface MultiLang {
+  en: string;
+  ru: string;
+  uz: string;
+}
+
 interface Product {
   id: string | number;
-  name: string;
-  description: string;
+  name: MultiLang;
+  description: MultiLang;
   image1: string;
-  subcategory: string;
+  subcategory: MultiLang;
 }
 
-interface Props {
+defineProps<{
   products: Product[];
-}
-
-defineProps<Props>();
+}>();
 </script>

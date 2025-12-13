@@ -15,35 +15,38 @@
         />
       </div>
       <!-- Loader -->
-      <div v-if="loading" class="flex justify-center py-20">
-        <div class="w-10 h-10 border-4 border-t-transparent border-gray-300 rounded-full animate-spin"></div>
-      </div>
+<!--      <div v-if="loading" class="flex justify-center py-20">-->
+<!--        <div class="w-10 h-10 border-4 border-t-transparent border-gray-300 rounded-full animate-spin"></div>-->
+<!--      </div>-->
 
       <!-- No Products -->
-      <div v-else-if="filteredProducts.length === 0" class="text-center w-full py-20">
-        <p class="text-xl text-gray-500 dark:text-gray-400 font-medium">
-          {{ $t("no_products_available") }}
-        </p>
-      </div>
+<!--      <div v-else-if="filteredProducts.length === 0" class="text-center w-full py-20">-->
+<!--        <p class="text-xl text-gray-500 dark:text-gray-400 font-medium">-->
+<!--          {{ $t("no_products_available") }}-->
+<!--        </p>-->
+<!--      </div>-->
 
 
       <!-- Product Grid -->
-      <div v-else class="grid grid-cols-2 md:grid-cols-4 gap-5">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
         <CommonProductsProductCard :products="filteredProducts" />
       </div>
-
     </div>
   </section>
 </template>
 
-
 <script setup lang="ts">
-const { t, locale } = useI18n();
-const products = ref<any[]>([]);
-const loading = ref(true);
+const { t } = useI18n();
+
+import { useProductStore } from '@/store/main';
+
+const store = useProductStore();
+
+// getter → computed
+const products = computed(() => store.getAll);
 
 const form = useForm({
-  product: 1, // default to "All products"
+  product: 1, // default
 });
 
 const productsList = [
@@ -56,41 +59,21 @@ const productsList = [
   { id: 7, title: "Alvin" },
 ];
 
-function getFaqs() {
-  loading.value = true;
-  useApi()
-      .$get(`/products/${locale.value}`)
-      .then((res) => {
-        products.value = res;
-      })
-      .catch((err) => {
-        console.error("Error fetching products:", err);
-      })
-      .finally(() => {
-        loading.value = false;
-      });
-}
-
-onMounted(getFaqs);
-
 const filteredProducts = computed(() => {
   const selected = form.values.product;
-  let result = [];
 
+  // 1 = All Products
   if (selected === 1) {
-    result = products.value;
-  } else {
-    const selectedItem = productsList.find((item) => item.id === selected);
-    if (selectedItem) {
-      result = products.value.filter(
-          (product) => product.category === selectedItem.title
-      );
-    }
+    return products.value.sort((a, b) => a.id - b.id);
   }
 
-  return result.slice().sort((a, b) => a.id - b.id); // sort by id ascending
+  const selectedItem = productsList.find((item) => item.id === selected);
+
+  if (!selectedItem) return [];
+
+  return products.value
+      .filter((product) => product.category === selectedItem.title)
+      .sort((a, b) => a.id - b.id);
 });
-
-
 </script>
 <!--/-->
