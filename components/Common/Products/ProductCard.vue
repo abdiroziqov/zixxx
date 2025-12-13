@@ -1,7 +1,6 @@
 <template>
   <div class="block" v-for="(item, index) in products" :key="index">
-    <NuxtLink
-      :to="`/products/${item?.id}`"
+  <div
       class="border hover:shadow-lg duration-300 rounded-lg overflow-hidden block"
     >
       <div class="aspect-square sm:w-[305px] sm:h-[305px]">
@@ -19,7 +18,7 @@
           {{ item?.subcategory[locale] }}
         </p>
       </div>
-    </NuxtLink>
+    </div>
   </div>
 </template>
 
