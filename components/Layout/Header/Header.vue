@@ -15,8 +15,20 @@
     <div class="container hidden lg:block">
       <div class="flex justify-between items-center">
         <a href="/">
-          <img class="hidden dark:block" src="/logo.svg" alt="logo" />
-          <img class="dark:hidden" src="/logo1.svg" alt="logo" />
+          <img
+            v-if="isDark"
+            src="/logo.svg"
+            alt="logo"
+            loading="eager"
+            decoding="async"
+          />
+          <img
+            v-else
+            src="/logo1.svg"
+            alt="logo"
+            loading="eager"
+            decoding="async"
+          />
         </a>
         <div>
           <ul class="flex gap-4 text-white">
@@ -52,6 +64,8 @@ const { t } = useI18n();
 const route = useRoute();
 const isScrolled = ref(false);
 const langSwitcherActive = ref(false);
+const themeCookie = useCookie("theme");
+const isDark = computed(() => themeCookie.value === "dark");
 
 const isHomeRoute = computed(() => route.path === "/");
 

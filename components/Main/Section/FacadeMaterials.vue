@@ -7,6 +7,8 @@
           class="w-full h-full rounded-3xl shadow-xl ring-1 ring-white/10"
           src="/images/dom.png"
           alt="image"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div class="lg:max-w-[487px] mt-6 lg:mt-0 glass-panel rounded-2xl p-5 md:p-7" data-aos="fade-left">

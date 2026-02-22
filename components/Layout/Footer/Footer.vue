@@ -8,8 +8,22 @@
     >
       <div>
         <a class="flex justify-center" href="/">
-          <img class="hidden dark:block w-[200px]" src="/logo.svg" alt="logo" />
-          <img class="dark:hidden w-[200px]" src="/logo1.svg" alt="logo" />
+          <img
+            v-if="isDark"
+            class="w-[200px]"
+            src="/logo.svg"
+            alt="logo"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            v-else
+            class="w-[200px]"
+            src="/logo1.svg"
+            alt="logo"
+            loading="lazy"
+            decoding="async"
+          />
         </a>
         <p class="dark:text-white text-dark font-normal leading-140 md:w-[209px] text-center">
           {{ $t("footer_description") }}
@@ -107,6 +121,8 @@
 
 <script setup lang="ts">
 const { t } = useI18n();
+const themeCookie = useCookie("theme");
+const isDark = computed(() => themeCookie.value === "dark");
 const currentYear = new Date().getFullYear();
 const quickLinks = [
   {

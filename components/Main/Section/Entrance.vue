@@ -3,14 +3,22 @@
     <Swiper v-bind="settings" :modules="modules" @slide-change="onSlideChange">
       <SwiperSlide>
         <img
-          class="!w-full !h-full object-cover pointer-events-none hidden dark:block"
+          v-if="isDark"
+          class="!w-full !h-full object-cover pointer-events-none"
           src="/images/main.png"
           alt="image"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
         <img
-          class="!w-full !h-full object-cover pointer-events-none dark:hidden"
+          v-else
+          class="!w-full !h-full object-cover pointer-events-none"
           src="/images/main-light.png"
           alt="image"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
       </SwiperSlide>
     </Swiper>
@@ -61,6 +69,8 @@ import { computed, ref } from "vue";
 
 const thumbsSwiper = ref(null);
 const { t } = useI18n();
+const themeCookie = useCookie("theme");
+const isDark = computed(() => themeCookie.value === "dark");
 
 const modules = [Thumbs, Navigation, Pagination, Autoplay, EffectFade];
 const settings = computed(() => ({

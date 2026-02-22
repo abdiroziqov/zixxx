@@ -42,14 +42,20 @@
         <div class="absolute -top-10 -left-10 h-32 w-32 rounded-full bg-orange/30 blur-3xl"></div>
         <div class="relative">
           <img
+              v-if="isDark"
               src="/public/images/worker.svg"
               alt="Worker"
-              class="relative w-full max-w-md lg:max-w-lg hidden dark:block mt-5 md:mt-0 rounded-3xl shadow-2xl ring-1 ring-white/10"
+              loading="lazy"
+              decoding="async"
+              class="relative w-full max-w-md lg:max-w-lg mt-5 md:mt-0 rounded-3xl shadow-2xl ring-1 ring-white/10"
           />
           <img
+              v-else
               src="/public/images/worker-light.svg"
               alt="Worker"
-              class="relative w-full max-w-md lg:max-w-lg dark:hidden mt-5 md:mt-0 rounded-3xl shadow-2xl ring-1 ring-black/5"
+              loading="lazy"
+              decoding="async"
+              class="relative w-full max-w-md lg:max-w-lg mt-5 md:mt-0 rounded-3xl shadow-2xl ring-1 ring-black/5"
           />
           <div
               v-for="(label, index) in labels"
@@ -69,6 +75,8 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const image = "/worker.png";
+const themeCookie = useCookie("theme");
+const isDark = computed(() => themeCookie.value === "dark");
 
 const features = [
   {

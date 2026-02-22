@@ -7,6 +7,8 @@
             :src="card?.image"
             alt="User"
             class="w-12 h-12 rounded-full"
+            loading="lazy"
+            decoding="async"
         />
         <div>
           <h3 class="text-lg font-semibold text-black dark:text-white"> {{ card?.name }}</h3>

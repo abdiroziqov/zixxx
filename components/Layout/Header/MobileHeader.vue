@@ -16,8 +16,20 @@
         </span>
       </transition>
       <a href="/">
-        <img class="hidden dark:block" src="/logo.svg" alt="logo" />
-        <img class="dark:hidden" src="/logo1.svg" alt="logo" />
+        <img
+          v-if="isDark"
+          src="/logo.svg"
+          alt="logo"
+          loading="eager"
+          decoding="async"
+        />
+        <img
+          v-else
+          src="/logo1.svg"
+          alt="logo"
+          loading="eager"
+          decoding="async"
+        />
       </a>
      <div class="flex items-center">
        <LayoutHeaderThemeSwitcher @change-theme="updateTheme" />
@@ -58,6 +70,8 @@
 const { t } = useI18n()
 const showMenu = ref(false)
 const langSwitcherActive = ref(false)
+const themeCookie = useCookie("theme");
+const isDark = computed(() => themeCookie.value === "dark");
 
 const emits = defineEmits<{
   (event: 'closeMobileHeader', isShow: boolean): void

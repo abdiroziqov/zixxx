@@ -13,7 +13,7 @@
             {{ $t("satisfied_customers_description") }}
           </p>
           <div class="mt-4 flex items-center gap-3">
-            <img src="/images/group-people.svg" alt="image" />
+            <img src="/images/group-people.svg" alt="image" loading="lazy" decoding="async" />
             <div class="flex items-center gap-1">
               <i class="icon-star text-[28px] text-orange" />
               <p class="text-[15px] dark:text-white text-gray opacity-80">

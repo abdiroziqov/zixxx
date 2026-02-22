@@ -14,6 +14,8 @@
           class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           :src="item?.image1 || '/logo2.svg'"
           alt="image"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div class="p-3 border-t border-white/40 dark:border-white/10">

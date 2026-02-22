@@ -166,11 +166,17 @@ const props = withDefaults(defineProps<Props>(), {
   customLoading: undefined,
 });
 
-const loading = ref(true);
+const loading = ref(false);
 const overlayRef = ref<HTMLElement | null>(null);
 const logoRef = ref<SVGSVGElement | null>(null);
 const spinnerRef = ref<HTMLElement | null>(null);
 let autoHideTimer: ReturnType<typeof setTimeout> | undefined;
+let showTimer: ReturnType<typeof setTimeout> | undefined;
+let hideTimer: ReturnType<typeof setTimeout> | undefined;
+let shownAt = 0;
+let isVisible = false;
+const SHOW_DELAY_MS = 120;
+const MIN_VISIBLE_MS = 300;
 
 const showLoader = async () => {
   if (import.meta.server) return;
@@ -246,16 +252,47 @@ const hideLoader = () => {
   });
 };
 
-const startAuto = () => {
-  showLoader();
-  autoHideTimer = window.setTimeout(() => {
+const requestShow = (immediate = false) => {
+  if (isVisible || showTimer) return;
+  if (immediate) {
+    shownAt = Date.now();
+    isVisible = true;
+    showLoader();
+    return;
+  }
+  showTimer = window.setTimeout(() => {
+    showTimer = undefined;
+    shownAt = Date.now();
+    isVisible = true;
+    showLoader();
+  }, SHOW_DELAY_MS);
+};
+
+const requestHide = () => {
+  if (showTimer) {
+    window.clearTimeout(showTimer);
+    showTimer = undefined;
+    return;
+  }
+  if (!isVisible) {
+    loading.value = false;
+    return;
+  }
+  const elapsed = Date.now() - shownAt;
+  const delay = Math.max(0, MIN_VISIBLE_MS - elapsed);
+  hideTimer = window.setTimeout(() => {
+    hideTimer = undefined;
+    isVisible = false;
     hideLoader();
-  }, 1600);
+  }, delay);
 };
 
 onMounted(() => {
   if (typeof props.customLoading === "undefined") {
-    startAuto();
+    const nuxtApp = useNuxtApp();
+    nuxtApp.hook("page:start", () => requestShow());
+    nuxtApp.hook("page:finish", () => requestHide());
+    requestHide();
   }
 });
 
@@ -263,19 +300,22 @@ onBeforeUnmount(() => {
   if (autoHideTimer) {
     window.clearTimeout(autoHideTimer);
   }
+  if (showTimer) {
+    window.clearTimeout(showTimer);
+  }
+  if (hideTimer) {
+    window.clearTimeout(hideTimer);
+  }
 });
 
 watch(
   () => props.customLoading,
   (newValue) => {
     if (typeof newValue !== "undefined") {
-      if (autoHideTimer) {
-        window.clearTimeout(autoHideTimer);
-      }
       if (newValue) {
-        showLoader();
+        requestShow(true);
       } else {
-        hideLoader();
+        requestHide();
       }
     }
   },
