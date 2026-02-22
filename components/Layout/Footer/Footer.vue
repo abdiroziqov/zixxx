@@ -1,9 +1,10 @@
 <template>
   <footer
-    class="bg-white dark:bg-gray dark:text-white text-dark pt-6 md:pt-10 border-[rgba(196,196,196,0.2)] border-t"
+    class="relative bg-white/90 dark:bg-[#0f1218] dark:text-white text-dark pt-6 md:pt-10 border-[rgba(196,196,196,0.2)] border-t"
   >
+    <div class="absolute inset-0 bg-grid opacity-30"></div>
     <div
-      class="container justify-between md:flex gap-5 md:gap-10 pb-6 md:pb-10"
+      class="container relative justify-between md:flex gap-5 md:gap-10 pb-6 md:pb-10"
     >
       <div>
         <a class="flex justify-center" href="/">
@@ -93,7 +94,7 @@
       </div>
     </div>
     <div
-      class="container space-x-2 flex justify-center border-[rgba(196,196,196,0.2)] border-t py-4 text-sm items-center"
+      class="container relative space-x-2 flex justify-center border-[rgba(196,196,196,0.2)] border-t py-4 text-sm items-center"
     >
       <p>
         © {{ currentYear }}

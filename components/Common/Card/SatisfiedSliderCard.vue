@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center">
-    <div class="relative p-4 md:p-6 bg-white dark:bg-[#464646] rounded-2xl dark:shadow-lg text-white">
+    <div class="relative p-4 md:p-6 glass-panel card-lift rounded-2xl text-white">
       <!-- Profile Section -->
       <div class="flex items-center gap-4">
         <img
@@ -10,7 +10,7 @@
         />
         <div>
           <h3 class="text-lg font-semibold text-black dark:text-white"> {{ card?.name }}</h3>
-          <p class="text-sm text-gray-400 opacity-80"> {{card?.description }}</p>
+          <p class="text-sm text-gray-500 dark:text-gray-300 opacity-80"> {{card?.description }}</p>
         </div>
       </div>
 
@@ -22,7 +22,7 @@
       </div>
 
       <!-- Review Text -->
-      <p class="mt-3 text-gray dark:text-gray-300 text-sm md:text-base">
+      <p class="mt-3 text-gray-600 dark:text-gray-300 text-sm md:text-base">
         {{ card?.review }}
       </p>
 

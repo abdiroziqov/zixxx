@@ -1,13 +1,14 @@
 <template>
-  <div class="bg-[#F0F2F1] dark:bg-[#37383C] py-8 md:py-16">
-    <div class="container">
-      <div class="md:flex justify-between">
-        <div class="md:w-[487px] mb-5 md:mb-0">
-          <p class="font-semibold text-2xl md:text-3xl leading-130 dark:text-white">
+  <section class="section-shell bg-[#F0F2F1] dark:bg-[#1a1d24] py-10 md:py-16">
+    <div class="absolute inset-0 bg-grid opacity-25"></div>
+    <div class="container relative">
+      <div class="md:flex justify-between gap-10">
+        <div class="md:w-[487px] mb-6 md:mb-0" data-aos="fade-right">
+          <p class="font-display font-semibold text-2xl md:text-3xl leading-130 dark:text-white">
             {{ $t("satisfied_customers") }}
           </p>
           <p
-            class="text-sm mt-1 opacity-80 leading-6 dark:text-white text-gray"
+            class="text-sm mt-2 opacity-80 leading-6 dark:text-white text-gray-600"
           >
             {{ $t("satisfied_customers_description") }}
           </p>
@@ -21,10 +22,12 @@
             </div>
           </div>
         </div>
-        <CommonCardSatisfiedSlider />
+        <div data-aos="fade-left" data-aos-delay="120">
+          <CommonCardSatisfiedSlider />
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts"></script>

@@ -8,6 +8,13 @@ export default defineNuxtConfig({
           rel: 'canonical',
           href: 'https://zixx.uz',
         },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        {
+          rel: 'stylesheet',
+          href:
+            'https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap',
+        },
         { rel: 'icon', type: 'image/x-icon', href: '/logo1.svg' },
       ],
       title: 'ZIXX - Сухие строительные смеси',

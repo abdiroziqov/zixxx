@@ -4,20 +4,21 @@ export default {
   darkMode: 'class',
   mode: 'jit',
   content: [
-    './src/components/**/*.{js,vue,ts}',
-    './src/composables/**/*.{js,ts}',
-    './src/assets/**/*.css',
-    './src/layouts/**/*.vue',
-    './src/pages/**/*.vue',
-    './src/plugins/**/*.{js,ts}',
-    './src/app.vue',
-    './src/error.vue',
+    './components/**/*.{js,vue,ts}',
+    './composables/**/*.{js,ts}',
+    './assets/**/*.css',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './app.vue',
+    './error.vue',
   ],
 
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'Roboto', 'Futura PT'"],
+        sans: ["'Manrope'", 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ["'Space Grotesk'", 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       container: {
         center: true,

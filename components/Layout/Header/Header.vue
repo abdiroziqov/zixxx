@@ -3,11 +3,11 @@
     :class="[
       isHomeRoute
         ? isScrolled
-          ? 'bg-black dark:bg-dark'
+          ? 'bg-black/75 dark:bg-dark/80 backdrop-blur border-b border-white/10'
           : 'bg-transparent'
         : isScrolled
-        ? 'bg-black dark:bg-dark'
-        : 'bg-gray',
+        ? 'bg-[#0f1117]/90 dark:bg-dark/80 backdrop-blur border-b border-white/10'
+        : 'bg-[#0f1117] dark:bg-dark',
       isHomeRoute ? 'fixed !w-full' : 'relative',
     ]"
     class="z-10 transition-all duration-300"

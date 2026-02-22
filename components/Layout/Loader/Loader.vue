@@ -1,22 +1,20 @@
 <template>
-  <transition name="fade">
-    <div
-      v-if="loading"
-      class="background-shadow-loader w-full h-screen fixed inset-0 z-[99999] flex-center bg-[#3A3B3F]"
-    >
-      <div
-        class="flex-col justify-between h-[100dvh] flex items-center relative"
+  <div
+    v-show="loading"
+    ref="overlayRef"
+    class="background-shadow-loader w-full h-screen fixed inset-0 z-[99999] flex-center bg-[#3A3B3F]"
+  >
+    <div class="flex-col justify-between h-[100dvh] flex items-center relative">
+      <svg
+        ref="logoRef"
+        class="absolute top-[27%] opacity-0"
+        version="1.0"
+        xmlns="http://www.w3.org/2000/svg"
+        width="400px"
+        height="300px"
+        viewBox="0 0 2080.000000 2080.000000"
+        preserveAspectRatio="xMidYMid meet"
       >
-        <svg
-          :class="{ '!opacity-100 translate-x-0': fullSvg }"
-          class="absolute top-[27%] opacity-0 transition-300 duration-300"
-          version="1.0"
-          xmlns="http://www.w3.org/2000/svg"
-          width="400px"
-          height="300px"
-          viewBox="0 0 2080.000000 2080.000000"
-          preserveAspectRatio="xMidYMid meet"
-        >
           <g
             transform="translate(0.000000,2080.000000) scale(0.100000,-0.100000)"
             fill="red"
@@ -153,17 +151,14 @@ l-42 3 -31 165 -30 165 -3 -167 -2 -168 -40 0 -40 0 0 243 c0 134 3 247 7 250
 0 -60z"
             />
           </g>
-        </svg>
+      </svg>
 
-        <div class="loader absolute bottom-[8%]" />
-      </div>
+      <div ref="spinnerRef" class="loader absolute bottom-[8%] opacity-0" />
     </div>
-  </transition>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
-
 interface Props {
   customLoading?: boolean;
 }
@@ -171,31 +166,117 @@ const props = withDefaults(defineProps<Props>(), {
   customLoading: undefined,
 });
 
-const fullSvg = ref(false);
 const loading = ref(true);
+const overlayRef = ref<HTMLElement | null>(null);
+const logoRef = ref<SVGSVGElement | null>(null);
+const spinnerRef = ref<HTMLElement | null>(null);
+let autoHideTimer: ReturnType<typeof setTimeout> | undefined;
+
+const showLoader = async () => {
+  if (import.meta.server) return;
+  loading.value = true;
+  await nextTick();
+  const { $gsap } = useNuxtApp();
+  if (!$gsap || !overlayRef.value) return;
+
+  document.body.style.overflow = "hidden";
+  $gsap.killTweensOf([overlayRef.value, logoRef.value, spinnerRef.value]);
+  $gsap.set(overlayRef.value, { autoAlpha: 0 });
+  if (logoRef.value) {
+    $gsap.set(logoRef.value, { autoAlpha: 0, y: 24, scale: 0.96 });
+  }
+  if (spinnerRef.value) {
+    $gsap.set(spinnerRef.value, { autoAlpha: 0, scale: 0.85 });
+  }
+
+  $gsap.to(overlayRef.value, {
+    autoAlpha: 1,
+    duration: 0.35,
+    ease: "power2.out",
+  });
+  if (logoRef.value) {
+    $gsap.to(logoRef.value, {
+      autoAlpha: 1,
+      y: 0,
+      scale: 1,
+      duration: 0.7,
+      ease: "power3.out",
+      delay: 0.05,
+    });
+  }
+  if (spinnerRef.value) {
+    $gsap.to(spinnerRef.value, {
+      autoAlpha: 1,
+      scale: 1,
+      duration: 0.5,
+      ease: "power2.out",
+      delay: 0.2,
+    });
+  }
+};
+
+const hideLoader = () => {
+  if (import.meta.server) {
+    loading.value = false;
+    return;
+  }
+  const { $gsap } = useNuxtApp();
+  if (!$gsap || !overlayRef.value) {
+    document.body.style.overflow = "";
+    loading.value = false;
+    return;
+  }
+
+  $gsap.to([logoRef.value, spinnerRef.value], {
+    autoAlpha: 0,
+    y: -12,
+    duration: 0.3,
+    ease: "power2.in",
+    overwrite: true,
+  });
+  $gsap.to(overlayRef.value, {
+    autoAlpha: 0,
+    duration: 0.35,
+    ease: "power2.in",
+    overwrite: true,
+    onComplete: () => {
+      document.body.style.overflow = "";
+      loading.value = false;
+    },
+  });
+};
+
+const startAuto = () => {
+  showLoader();
+  autoHideTimer = window.setTimeout(() => {
+    hideLoader();
+  }, 1600);
+};
 
 onMounted(() => {
-  const body = document.body;
-  body.style.overflow = "hidden";
-  setTimeout(() => {
-    fullSvg.value = true;
-  }, 1000);
+  if (typeof props.customLoading === "undefined") {
+    startAuto();
+  }
+});
 
-  setTimeout(() => {
-    fullSvg.value = true;
-  }, 1000);
-
-  setTimeout(() => {
-    body.style.overflow = "";
-    loading.value = false;
-  }, 2000);
+onBeforeUnmount(() => {
+  if (autoHideTimer) {
+    window.clearTimeout(autoHideTimer);
+  }
 });
 
 watch(
   () => props.customLoading,
   (newValue) => {
     if (typeof newValue !== "undefined") {
-      loading.value = newValue;
+      if (autoHideTimer) {
+        window.clearTimeout(autoHideTimer);
+      }
+      if (newValue) {
+        showLoader();
+      } else {
+        hideLoader();
+      }
     }
   },
   {
