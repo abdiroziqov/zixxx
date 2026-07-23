@@ -1,21 +1,22 @@
 <template>
-  <div class="bg-white dark:!bg-dark pb-16">
+  <main class="section-shell bg-white/90 dark:bg-[#11151d] pb-16 min-h-[70vh]">
     <div class="relative container">
       <BaseBreadcrumb :breadcrumb="menu" />
       <!-- Success Modal -->
 
       <div class="">
-        <h3
-          class="font-semibold tracking-[1.2px] leading-130 text-3xl dark:text-white text-dark mb-4 mf:mb-6"
+        <p class="text-sm font-semibold uppercase tracking-[.18em] text-orange mb-2">{{ $t("contact_us") }}</p>
+        <h1
+          class="font-display font-semibold leading-120 text-3xl md:text-5xl dark:text-white text-dark mb-7"
         >
           {{ $t("factory_locations") }}
-        </h3>
+        </h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           <CommonCardFactoryLocation :items="cards" />
         </div>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 <script setup lang="ts">
 const {t}  = useI18n();

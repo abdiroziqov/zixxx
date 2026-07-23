@@ -14,7 +14,7 @@
   >
     <div class="container hidden lg:block">
       <div class="flex justify-between items-center">
-        <a href="/">
+        <NuxtLink to="/" aria-label="ZIXX home">
           <img
             v-if="isDark"
             src="/logo.svg"
@@ -29,7 +29,7 @@
             loading="eager"
             decoding="async"
           />
-        </a>
+        </NuxtLink>
         <div>
           <ul class="flex gap-4 text-white">
             <li
@@ -69,12 +69,19 @@ const isDark = computed(() => themeCookie.value === "dark");
 
 const isHomeRoute = computed(() => route.path === "/");
 
+let ticking = false;
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50;
+  if (ticking) return;
+  ticking = true;
+  window.requestAnimationFrame(() => {
+    isScrolled.value = window.scrollY > 50;
+    ticking = false;
+  });
 };
 
 onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+  window.addEventListener("scroll", handleScroll, { passive: true });
 });
 
 onUnmounted(() => {

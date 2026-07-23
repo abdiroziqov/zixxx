@@ -1,21 +1,24 @@
 <template>
-  <div
-    class="block"
+  <NuxtLink
+    :to="`/products/${item.id}`"
+    class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-4 rounded-2xl"
     v-for="(item, index) in products"
-    :key="index"
+    :key="item.id"
     :data-aos="'fade-up'"
     :data-aos-delay="index * 70"
   >
   <div
       class="card-lift group border border-white/60 dark:border-white/10 bg-white/80 dark:bg-[#21242d]/80 rounded-2xl overflow-hidden block"
     >
-      <div class="aspect-square sm:w-[305px] sm:h-[305px] overflow-hidden">
+      <div class="aspect-square overflow-hidden bg-slate-50 dark:bg-white/5">
         <img
           class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           :src="item?.image1 || '/logo2.svg'"
           alt="image"
           loading="lazy"
           decoding="async"
+          width="560"
+          height="560"
         />
       </div>
       <div class="p-3 border-t border-white/40 dark:border-white/10">
@@ -27,7 +30,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup lang="ts">

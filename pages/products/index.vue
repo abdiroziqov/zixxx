@@ -1,10 +1,13 @@
 <template>
-  <section class="bg-white dark:!bg-dark pb-16">
+  <section class="section-shell bg-white/90 dark:bg-[#11151d] py-8 md:py-14 min-h-[70vh]">
     <div class="container">
-      <div class="flex justify-between items-center">
-        <h3 class="font-semibold text-3xl leading-130 text-dark dark:text-white my-7">
-          {{ $t("all_products") }}
-        </h3>
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-8">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[.18em] text-orange mb-2">ZIXX catalog</p>
+          <h1 class="font-display font-semibold text-3xl md:text-5xl leading-120 text-dark dark:text-white">
+            {{ $t("all_products") }}
+          </h1>
+        </div>
         <FormSelect
             v-model="form.values.product"
             :options="productsList"
@@ -14,22 +17,11 @@
             :placeholder="t('all_products')"
         />
       </div>
-      <!-- Loader -->
-<!--      <div v-if="loading" class="flex justify-center py-20">-->
-<!--        <div class="w-10 h-10 border-4 border-t-transparent border-gray-300 rounded-full animate-spin"></div>-->
-<!--      </div>-->
-
-      <!-- No Products -->
-<!--      <div v-else-if="filteredProducts.length === 0" class="text-center w-full py-20">-->
-<!--        <p class="text-xl text-gray-500 dark:text-gray-400 font-medium">-->
-<!--          {{ $t("no_products_available") }}-->
-<!--        </p>-->
-<!--      </div>-->
-
-
-      <!-- Product Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+      <div v-if="filteredProducts.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
         <CommonProductsProductCard :products="filteredProducts" />
+      </div>
+      <div v-else class="rounded-3xl border border-dashed border-slate-300 dark:border-white/20 p-12 text-center text-slate-500 dark:text-slate-300">
+        {{ $t("no_products_available") }}
       </div>
     </div>
   </section>
@@ -64,7 +56,7 @@ const filteredProducts = computed(() => {
 
   // 1 = All Products
   if (selected === 1) {
-    return products.value.sort((a, b) => a.id - b.id);
+    return [...products.value].sort((a, b) => a.id - b.id);
   }
 
   const selectedItem = productsList.find((item) => item.id === selected);
@@ -72,7 +64,7 @@ const filteredProducts = computed(() => {
   if (!selectedItem) return [];
 
   return products.value
-      .filter((product) => product.category === selectedItem.title)
+      .filter((product) => product.brand === selectedItem.title)
       .sort((a, b) => a.id - b.id);
 });
 </script>

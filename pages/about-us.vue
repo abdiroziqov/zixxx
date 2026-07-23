@@ -1,30 +1,32 @@
 <template>
-  <main class="md:pb-10 pb-10 bg-white dark:bg-dark">
+  <main class="pb-14 bg-white/90 dark:bg-[#11151d]">
     <div
-      class="main__about py-10 bg-[url('/public/images/about.png')] bg-cover bg-no-repeat"
+      class="main__about relative py-16 md:py-24 bg-[url('/images/about.png')] bg-cover bg-center bg-no-repeat overflow-hidden"
     >
-      <div class="container">
-        <div class="md:w-[470px]">
-          <h3
-            class="text-3xl font-semibold leading-130 tracking-[1.2px] text-white"
+      <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/10"></div>
+      <div class="container relative">
+        <div class="md:w-[620px]">
+          <p class="text-sm font-semibold uppercase tracking-[.18em] text-orange mb-3">{{ $t("about_us") }}</p>
+          <h1
+            class="font-display text-3xl md:text-5xl font-semibold leading-120 text-white"
           >
             {{ $t("company_razata") }}
-          </h3>
-          <p class="text-lg leading-140 mt-6 text-white">
+          </h1>
+          <p class="text-base md:text-lg leading-140 mt-5 text-white/85 max-w-xl">
             {{ $t("company_rzata_text") }}
           </p>
         </div>
       </div>
     </div>
-    <div class="w-full container lg:w-[782px] mx-auto">
-    <div class="flex md:justify-center flex-col pt-4 pb-10 gap-6">
-      <h3
-          class="font-semibold tracking-[1.2px] leading-130 text-3xl dark:text-white text-dark"
+    <div class="w-full container lg:max-w-[920px] mx-auto">
+    <div class="flex md:justify-center flex-col pt-10 md:pt-14 pb-10 gap-6">
+      <h2
+          class="font-display font-semibold leading-120 text-3xl md:text-4xl dark:text-white text-dark"
       >
         {{ $t("feedback_form") }}
-      </h3>
+      </h2>
 
-      <form class="grid grid-cols-2 gap-6 w-full" @submit.prevent>
+      <form class="grid grid-cols-2 gap-5 md:gap-6 w-full rounded-3xl border border-slate-200 dark:border-white/10 bg-white/75 dark:bg-white/5 p-5 md:p-8 shadow-xl" @submit.prevent="sendMail">
         <FormGroup
             main-class="flex flex-col gap-1 col-span-2"
             :label="t('your_name')"
@@ -173,7 +175,7 @@ function getFaqs() {
   useApi()
       .$get(`/faq/${locale.value}`)
       .then((res) => {
-        faq.value = res;
+        about.value = res;
       })
       .catch((err) => {
         console.error("Error fetching faq:", err);
@@ -271,6 +273,10 @@ watch([showSuccessModal, showErrorModal], ([success, error]) => {
   } else {
     document.body.classList.remove("overflow-hidden");
   }
+});
+
+onBeforeUnmount(() => {
+  document.body.classList.remove("overflow-hidden");
 });
 
 </script>

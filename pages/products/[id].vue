@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-white dark:!bg-dark pb-8 md:pb-16">
+  <main class="section-shell bg-white/90 dark:bg-[#11151d] pb-10 md:pb-16 min-h-[70vh]">
     <div class="relative container md:py-6">
       <BaseBreadcrumb :breadcrumb="menu" />
 
       <div v-if="!loading">
-        <div class="md:flex gap-9 mt-10">
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 mt-6 md:mt-10">
           <CommonProductsSwiperProduct :images="productsSingle?.images" />
           <CommonProductsLeftSide class="mt-5 md:mt-0" :data="productsSingle" />
         </div>
@@ -23,7 +23,7 @@
         <span class="w-10 h-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></span>
       </div>
     </div>
-  </div>
+  </main>
 </template>
 <script setup lang="ts">
 import { ref, computed } from "vue";
@@ -69,15 +69,6 @@ function getFaqs() {
 getProductSingle();
 getFaqs();
 
-// Helper function to shuffle array
-function shuffleArray<T>(array: T[]): T[] {
-  return array
-      .map(value => ({ value, sort: Math.random() }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(({ value }) => value);
-}
-
-// Randomized similar products (same category)
 const filteredProducts = computed(() => {
   if (!productsSingle.value) return [];
   const similar = products.value.filter(
@@ -85,7 +76,7 @@ const filteredProducts = computed(() => {
           item.id !== productsSingle.value?.id &&
           item.category_id === productsSingle.value?.category_id
   );
-  return shuffleArray(similar);
+  return similar;
 });
 
 // Breadcrumb menu

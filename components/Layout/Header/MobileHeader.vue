@@ -7,15 +7,15 @@
   >
     <div class="container flex items-center justify-between h-10">
       <transition mode="out-in" name="page-change">
-        <span :key="showMenu" class="cursor-pointer" @click="toggleMenu">
+        <button :key="showMenu" type="button" class="cursor-pointer" :aria-label="showMenu ? 'Close menu' : 'Open menu'" @click="toggleMenu">
           <i
               v-if="!showMenu"
               class="duration-200 icon-menu text-2.5xl text-white"
           />
           <svg class="text-2.5xl dark:text-white text-dark" v-else xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m12 13.4l-4.9 4.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7l4.9-4.9l-4.9-4.9q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.9 4.9l4.9-4.9q.275-.275.7-.275t.7.275t.275.7t-.275.7L13.4 12l4.9 4.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275z"/></svg>
-        </span>
+        </button>
       </transition>
-      <a href="/">
+      <NuxtLink to="/" aria-label="ZIXX home" @click="showMenu = false">
         <img
           v-if="isDark"
           src="/logo.svg"
@@ -30,7 +30,7 @@
           loading="eager"
           decoding="async"
         />
-      </a>
+      </NuxtLink>
      <div class="flex items-center">
        <LayoutHeaderThemeSwitcher @change-theme="updateTheme" />
        <LayoutHeaderLangSwitcher
@@ -92,6 +92,10 @@ watch(
       document.body.style.overflow = val ? 'hidden' : 'auto'
     }
 )
+
+onBeforeUnmount(() => {
+  document.body.style.overflow = ''
+})
 
 
 const quickLinks = [

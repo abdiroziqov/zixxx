@@ -34,6 +34,7 @@
 
     html {
         scroll-behavior: smooth;
+        text-rendering: optimizeLegibility;
     }
 
     body {
@@ -44,11 +45,16 @@
             radial-gradient(900px 600px at 10% -10%, var(--halo-1), transparent 60%),
             radial-gradient(900px 600px at 90% 10%, var(--halo-2), transparent 55%),
             linear-gradient(180deg, var(--bg-a), var(--bg-b));
+        min-height: 100vh;
     }
 }
 
 img {
     object-fit: cover;
+}
+
+button, a, input, textarea, select {
+    -webkit-tap-highlight-color: transparent;
 }
 
 .fade-enter-active {
@@ -214,4 +220,27 @@ html.dark .card-lift:hover {
     inset: -40% -20%;
     background: radial-gradient(600px 400px at 20% 10%, var(--halo-1), transparent 65%);
     pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .glass-panel {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+
+    .section-shell::before {
+        display: none;
+    }
 }
